@@ -136,6 +136,7 @@ def imply_and_check(circuit, faults, location, value, D_drive):
            gate.value = value
 
     rothv = value 
+
     if(location in circuit.inputs): 
        for gate in circuit.gatemap.values():
          if location in gate.fanin:
@@ -166,20 +167,25 @@ def imply_and_check(circuit, faults, location, value, D_drive):
                #   return False 
     elif(location in circuit.outputs): 
        for item in gate_obj.fanin:
-           inputs.append(item)
+           inputs.append(circuit.gatemap[item].value())
        check_gate_out = gate_out(gate_obj.gatetype, inputs)
-       for Fault in faults:
-          if location == Fault.stem:
-            if value != check_gate_out:
-              if value == cframe.Roth.One and check_gate_out == cframe.Roth.Zero:
-                val = cframe.Roth.D  
-              else:
-                val = cframe.Roth.D_b
-       cval = find_cval(gate_obj.gatetype)
-       if(value != cval and value != (cframe.Roth.D or cframe.Roth.D_b or cframe.Roth.X)): 
-          val = cframe.Roth.invert(cval)
-          for item in gate_obj.fanin:
-            imply_and_check(circuit, faults, item, val, D_drive)
+
+       if(location in fault.stem for fault in faults):
+         for Fault in faults:
+            if location == Fault.stem:
+              if value != check_gate_out:
+                if value == cframe.Roth.One and check_gate_out == cframe.Roth.Zero:
+                  val = cframe.Roth.D  
+                else:
+                  val = cframe.Roth.D_b
+       else:
+         cval = find_cval(gate_obj.gatetype)
+         if(value == cframe.Roth.invert(cval) and check_gate_out == (cframe.Roth.D or cframe.Roth.D_b or cframe.Roth.X)):
+            val = cframe.Roth.invert(cval)
+            for item in gate_obj.fanin:
+              imply_and_check(circuit, faults, item, val, D_drive)
+         elif(value == cval and  check_gate_out == (cframe.Roth.D or cframe.Roth.D_b or cframe.Roth.X)):
+            
   
     else:
        for gate in circuit.gatemap.values():
@@ -198,7 +204,14 @@ def imply_and_check(circuit, faults, location, value, D_drive):
             imply_and_check(circuit, faults, loc, val, D_drive)
 
        for gate in gate_obj.fanin:
-          
+          inputs.append(circuit.gatemap[gate].value())
+       check_gate_out = gate_out(gate_obj.gatetype, inputs)
+       cval = find_cval(gate_obj.gatetype)
+       if(value == cframe.Roth.invert(cval) and value != (cframe.Roth.D or cframe.Roth.D_b or cframe.Roth.X)):
+          val = cframe.Roth.invert(cval)
+          for item in gate_obj.fanin:
+             imply_and_check(circuit, faults, item, val, D_drive)
+       
       
 
                        
