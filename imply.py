@@ -127,30 +127,28 @@ def imply_and_check(circuit, faults, location, value, D_drive):
     for gate in circuit.gatemap.values():
        if location == gate.name:
          name = gate.gatetype
-
-       if gate.value == cframe.Roth.X:
-         gate.value = value
-       elif gate.value != value:
-         return "Failure"
-       else:
-         gate.value = value
-
-    rothv = value
-    for gate in circuit.gatemap.values():
-       if(location in circuit.inputs and location in gate.fanin):
-         if(rothv == find_cval(name)):
-           loc = gate.name
-           val = get_val(rothv, gate.gatetype)
+         gate_obj = gate
+         if gate.value == cframe.Roth.X:
+           gate.value = value
+         elif gate.value != value:
+           return "Failure"
          else:
-           loc = gate.name
-           for item in gate.inputs:
-              if item != location:
-                inputs.append(item)
-           inputs.append(location)
-           val =  gate_out(inputs, gate.gatetype)
+           gate.value = value
 
-         #if val != gate.value:
-          # return "Failure" 
+    rothv = value 
+    if(location in circuit.inputs): 
+       for gate in circuit.gatemap.values():
+         if location in gate.fanin:
+            if(rothv == find_cval(name)):
+              loc = gate.name
+              val = get_val(rothv, gate.gatetype)
+            else:
+              loc = gate.name
+              for item in gate.inputs:
+                if item != location:
+                  inputs.append(item)
+              inputs.append(location)
+              val =  gate_out(inputs, gate.gatetype)
            
          for Fault in faults:
            if loc == Fault.stem:
@@ -159,39 +157,41 @@ def imply_and_check(circuit, faults, location, value, D_drive):
                  val = cframe.Roth.D  
                else:
                  val = cframe.Roth.D_b
-    
-       else:
-         
-
         
-         imply_and_check(circuit, faults, loc, val, D_drive)  
-             #imply_list[gate.name] = val 
-         #if imply_list[gate.name] != val:
-           #return False
+         imply_and_check(circuit, faults, loc, val, D_drive)   
               
                #if(imply_and_check(circ,faults,loc,val, D_drive)):
                #   imply_list[loc] = val
                #else:
                #   return False 
-       else: 
-         for item in gate.fanin:
-           inp_list.append(imply_list[item])
-         loc = gate.name
-         val = gate_out(gate.gatetype, inp_list)
-               #if(imply_and_check(circ, faults, loc, val, D_drive)):
-               #  imply_list[loc] = val
-               #else  
-               #  return False                   
-         if loc == Fault.stem:
-           if val != Fault.value: 
-             if val == cframe.Roth.One and Fault.value == cframe.Roth.Zero:
-               val = cframe.Roth.D
-             else:
-               val = cframe.Roth.D_b 
-           imply_list[gate.name] = val
-         else:
-           if imply_list[gate.name] != val:
-             return False
+    elif(location in circuit.outputs): 
+       for item in gate_obj.fanin:
+           inputs.append(item)
+       check_gate_out = gate_out(gate_obj.gatetype, inputs)
+       for Fault in faults:
+          if location == Fault.stem:
+            if value != check_gate_out:
+              if value == cframe.Roth.One and check_gate_out == cframe.Roth.Zero:
+                val = cframe.Roth.D  
+              else:
+                val = cframe.Roth.D_b
+       cval = find_cval(gate_obj.gatetype)
+       if(value != cval and value != (cframe.Roth.D or cframe.Roth.D_b or cframe.Roth.X)): 
+          val = cframe.Roth.invert(cval)
+          for item in gate_obj.fanin:
+            imply_and_check(circuit, faults, item, val, D_drive)
+  
+    else:
+ 
+             
+               
+               
+               
+           
+           
+         
+           
+             
                   
                     
                     
