@@ -1,0 +1,11 @@
+# Some test implications
+
+fault_site(10,1)
+imply(1,1)
+J_frontier
+imply(3,1)
+imply(16,1)
+J_frontier
+D_frontier
+x-path
+display_lines

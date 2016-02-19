@@ -1,0 +1,9 @@
+# c17 implications 2
+
+fault_site(16,0)
+imply(19,1)
+J_frontier
+imply(23,1)
+D_frontier
+J_frontier
+display_lines

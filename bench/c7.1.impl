@@ -1,0 +1,12 @@
+# c7 implications
+
+fsite(result, 0)
+
+imply(a0, 0)
+display_lines
+imply(b0, 0)
+display_lines
+imply(a1, 0)
+display_lines
+imply(b1, 1)
+display_lines

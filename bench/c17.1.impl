@@ -1,0 +1,10 @@
+# c17 implications 1
+
+fault_site(10,1)
+imply(1,1)
+imply(3,1)
+D_frontier
+x-path
+imply(16,1)
+J_frontier
+display_lines

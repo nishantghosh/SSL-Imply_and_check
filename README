@@ -1,0 +1,48 @@
+*****************************************************************
+*************************   PROJECT 2   *************************
+*****************************************************************
+
+The directory structure is as follows:
+----------------------------------------------------------------------------
+./imply.py  - The source code for the project. All of the coding you need
+	         to do for this project will be done in this file.
+
+./bench     - ISCAS circuits, implication commands, and correct example
+	      program outputs.
+
+./logs      - Logs created during execution are placed here by default.
+	      The imply.py as provided automatically creates a log file
+	      when run.
+----------------------------------------------------------------------------
+
+You should be able to execute the program immediately. Launch the 765
+virtual environment (see project description) and execute the program:
+       
+(765py) prompt> python imply.py bench/c17.bench bench/c17.impl temp
+
+Note that the program will create one output file, "temp.result". The
+location (and name) of this file is controlled by the last argument
+provided when invoking the program.
+
+To complete this project you will need to complete the "imply_and_check",
+"report_j_frontier", and "report_d_frontier" functions. For extra credit
+you can implement the "x_path_check" function and add unique D-drive
+functionality to "imply_and_check". Assuming you use the program as its
+given, creating the appropriate output files and writing out the circuit
+state in the proper format is handled for you. However, you will need to
+create the properly-formatted output for reporting the J and D frontiers,
+as well as the X-path check should you choose to implement it. Examples of
+correct outputs are given in the files in the bench/results/ subdirectory
+and can be used to check the correctness of your program.
+
+Documentation for the cframe module can be found in one of three locations:
+
+	1. html generated from the cframe source code, found at:
+	   http://ece.cmu.edu/~ee765/cframe_doc
+	2. Comments located in the cframe source code, found at:
+	   /afs/ece/class/ee765/project/cframe/cframe/cframe.py
+	3. Invoking the help() function in an interactive python shell:
+	   (765py) prompt> python
+	   >>> import cframe
+	   >>> help(cframe.Circuit)
+	

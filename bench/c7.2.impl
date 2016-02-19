@@ -1,0 +1,6 @@
+# XOR stuff 2
+
+fsite(result, 0)
+imply(result, 1)
+J_frontier
+display_lines

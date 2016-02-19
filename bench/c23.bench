@@ -1,0 +1,30 @@
+# c19 (Figure 7.28 from textbook MB-VA)
+
+INPUT(a0)
+INPUT(a1)
+INPUT(a2)
+INPUT(a3)
+INPUT(a4)
+INPUT(a5)
+INPUT(a6)
+INPUT(a7)
+INPUT(a8)
+INPUT(a9)
+INPUT(a10)
+INPUT(a11)
+INPUT(a12)
+INPUT(a13)
+
+OUTPUT(f)
+
+c0 = nand(a0, a1, a2)
+c1 = nand(a3, a4, a5)
+c2 = nand(a6, a7, a8)
+c3 = nand(a9, a10, a11)
+c4 = or(a12, a13)
+
+e0 = nand(c0, c1)
+e1 = nand(c2, c3)
+e2 = not(c4)
+
+f = nand(e0, e1, e2)

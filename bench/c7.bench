@@ -1,0 +1,13 @@
+# c7 (2-bit comparator)
+
+input(a0)
+input(a1)
+input(b0)
+input(b1)
+
+output(result)
+
+c0 = xor(a0, b0)
+c1 = xor(a1, b1)
+
+result = or(c0, c1)

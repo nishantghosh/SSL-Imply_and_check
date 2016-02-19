@@ -1,0 +1,44 @@
+Parsing ISCAS Format... done.
+Parsing commands file... done.
+J-Frontier
+c1
+$
+
+J-Frontier
+c1
+$
+
+D-Frontier
+e0
+$
+
+X-PATH
+e0
+$
+
+Circuit State
+a0: X
+a1: X
+a10: X
+a11: X
+a12: X
+a13: X
+a2: X
+a3: X
+a4: X
+a5: X
+a6: 1
+a7: 1
+a8: 1
+a9: 0
+c0: X
+c1: D
+c2: 0
+c3: 1
+c4: X
+e0: X
+e1: 1
+e2: X
+f: X
+$
+
