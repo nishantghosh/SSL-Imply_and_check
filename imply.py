@@ -182,7 +182,26 @@ def imply_and_check(circuit, faults, location, value, D_drive):
             imply_and_check(circuit, faults, item, val, D_drive)
   
     else:
- 
+       for gate in circuit.gatemap.values():
+          if location in gate.fanin:
+            if value == find_cval(gate.gatetype):
+              loc = gate.name
+              val = get_val(value, gate.gatetype)
+              
+            else:
+              loc = gate.name
+              for item in gate.inputs:
+                if item != location:
+                  inputs.append(circuit.gatemap[item].value()) 
+              inputs.append(value)
+              val =  gate_out(inputs, gate.gatetype)
+            imply_and_check(circuit, faults, loc, val, D_drive)
+
+       for gate in gate_obj.fanin:
+          
+      
+
+                       
              
                
                
