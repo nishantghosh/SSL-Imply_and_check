@@ -55,7 +55,7 @@ def main():
 
             # J Frontier command calls the 
             if command == cframe.Command.Jfront:
-                report_j_front(circ, ofile)
+                report_j_front(circ, ofile, J_Frontier)
 
             # D Frontier command 
             if command == cframe.Command.Dfront:
@@ -113,8 +113,8 @@ def is_J_Frontier(circuit, gate_obj):
     inputs = []
     obj = set()
 
-    if(gate_obj.value != cframe.Roth.X and gate_obj.gatetype != INPUT):
-      for fin in gate.fanin:
+    if(gate_obj.value != cframe.Roth.X and gate_obj.gatetype != 'INPUT'):
+      for fin in gate_obj.fanin:
          inputs.append(fin)
       for gate in circuit.gatemap.values(): 
          if(gate.name in inputs):
@@ -154,24 +154,32 @@ def imply_and_check(circuit, faults, location, value, D_drive):
        if(location == gate.name):
           name = gate.gatetype
           gate_obj = gate
-       if(gate not in fault.stem for fault in faults):
-          if gate.value == cframe.Roth.X:
-            gate.value = value
-          elif gate.value != value:
-            return False
-       else:
-          for fault in faults:
-            if(location == fault.stem):
-              if(value != fault.value):
-                if(value == cframe.Roth.One and fault.value == cframe.Roth.Zero):
-                  fault.value = cframe.Roth.D
-                else:
-                  fault.value = cframe.Roth.D_b
-              if(is_J_Frontier(circuit, gate_obj)):
-                J_Frontier.add(gate_obj.name)
-              else:
-                 if(gate_obj.name in J_frontier):
-                   J_Frontier.remove(gate_obj.name)
+          if(gate not in fault.stem for fault in faults):
+             if gate.value == cframe.Roth.X:
+               gate.value = value
+             elif gate.value != value:
+               return False
+             print(gate.name, gate.gatetype, gate.value.value)
+             if(is_J_Frontier(circuit, gate_obj)):
+               J_Frontier.add(gate_obj.name)
+             else:
+               if(gate_obj.name in J_Frontier):
+                 J_Frontier.remove(gate_obj.name)
+          else:
+             for fault in faults:
+               print("Inside imply fault")
+               if(location == fault.stem):
+                 if(value != fault.value):
+                   if(fault.value == cframe.Roth.One and value == cframe.Roth.Zero):
+                     fault.value = cframe.Roth.D_b
+                   else:
+                     fault.value = cframe.Roth.D
+
+                 if(is_J_Frontier(circuit, gate_obj)):
+                   J_Frontier.add(gate_obj.name)
+                 else:
+                   if(gate_obj.name in J_frontier):
+                     J_Frontier.remove(gate_obj.name)
                
 
     rothv = value 
@@ -187,14 +195,16 @@ def imply_and_check(circuit, faults, location, value, D_drive):
               for item in gate.fanin:
                  #inputs.append(circuit.gatemap[item].value())
                  for key, val in circuit.gatemap.items():
-                    if(key == item):
+                    if(key == item and key != location):
                       temp = val.value
                       inputs.append(temp)
-
-              print(inputs)
+              inputs.append(gate_obj.value.value)
+              #print(input
+              print(inputs, gate.gatetype)
               val =  gate_out(inputs, gate.gatetype)
-              
-            imply_and_check(circuit, faults, loc, val, D_drive)   
+              print(val.value)
+            if(val != cframe.Roth.X):  
+              imply_and_check(circuit, faults, loc, val, D_drive)   
                
     elif(location in circuit.outputs): 
        for item in gate_obj.fanin:
@@ -255,7 +265,7 @@ def imply_and_check(circuit, faults, location, value, D_drive):
     return True
 
 
-def report_j_front(circuit, outfile):
+def report_j_front(circuit, outfile, J_Frontier):
     """Determine the gates on the J frontier and write out to output file.
 
     Args:
@@ -263,9 +273,10 @@ def report_j_front(circuit, outfile):
        outfile (file pointer): Open file pointer for writing.
     """
     outfile.write("J-Frontier\n")
-    for item in J_Frontier:
-       outfile.write(item + "\n")
-    outfile.write("$") 
+    if(J_Frontier):
+      for item in J_Frontier:
+         outfile.write(item + "\n")
+    outfile.write("$\n") 
      
 
 
