@@ -4,6 +4,9 @@ import cframe
 import argparse
 import os
 
+J_Frontier = set()
+D_Frontier = set()
+
 def main():
     parser = argparse.ArgumentParser(description="Perform implication and checking for an ISCAS circuit.")
     parser.add_argument("circuit", help="ISCAS file describing circuit to be collapsed")
@@ -105,7 +108,27 @@ def gate_out(inputs,optype): #Returns controlling value of the gate
     else:
        return -1 #value not defined
 
+def is_J_Frontier(circuit, gate_obj):
+    countx = 0
+    inputs = []
+    obj = set()
 
+    if(gate_obj.value != cframe.Roth.X):
+      for fin in gate.fanin:
+         inputs.append(fin)
+      for gate in circuit.gatemap.values(): 
+         if(gate.name in inputs):
+           obj.add(gate)
+
+      for gate in obj:
+         if(gate.value == cframe.Roth.X):
+            countx += 1
+
+      if(countx >= 2): 
+         return True
+    else:
+      return False
+     
 
 def imply_and_check(circuit, faults, location, value, D_drive):
     """Imply a value and check for consequences in a circuit.
@@ -125,15 +148,25 @@ def imply_and_check(circuit, faults, location, value, D_drive):
     inputs = []
 
     for gate in circuit.gatemap.values():
-       if location == gate.name:
-         name = gate.gatetype
-         gate_obj = gate
-         if gate.value == cframe.Roth.X:
-           gate.value = value
-         elif gate.value != value:
-           return "Failure"
-         else:
-           gate.value = value
+       if(location == gate.name):
+          name = gate.gatetype
+          gate_obj = gate
+       if(gate not in fault.stem for fault in faults):
+          if gate.value == cframe.Roth.X:
+            gate.value = value
+          elif gate.value != value:
+            return "Failure"
+       else:
+          for fault in faults:
+            if location == fault.stem:
+              if value != fault.value:
+                if value == cframe.Roth.One and fault.value == cframe.Roth.Zero
+                  fault.value = cframe.Roth.D
+                else:
+                  fault.value = cframe.Roth.D_b
+              if(is_J_Frontier(circuit, gate_obj)):
+                J_Frontier.add(gate_obj.name)
+               
 
     rothv = value 
 
@@ -180,11 +213,13 @@ def imply_and_check(circuit, faults, location, value, D_drive):
                   val = cframe.Roth.D_b
        else:
          cval = find_cval(gate_obj.gatetype)
-         if(value == cframe.Roth.invert(cval) and check_gate_out == (cframe.Roth.D or cframe.Roth.D_b or cframe.Roth.X)):
+         if(value == cval and check_gate_out == (cframe.Roth.D or cframe.Roth.D_b or cframe.Roth.X)):
             val = cframe.Roth.invert(cval)
             for item in gate_obj.fanin:
               imply_and_check(circuit, faults, item, val, D_drive)
-         elif(value == cval and  check_gate_out == (cframe.Roth.D or cframe.Roth.D_b or cframe.Roth.X)):
+         if(value == cval and  check_gate_out != (cframe.Roth.D or cframe.Roth.D_b or cframe.Roth.X)):
+            if check_gate_out != value:
+              return "Failure"
             
   
     else:
@@ -205,12 +240,17 @@ def imply_and_check(circuit, faults, location, value, D_drive):
 
        for gate in gate_obj.fanin:
           inputs.append(circuit.gatemap[gate].value())
+
        check_gate_out = gate_out(gate_obj.gatetype, inputs)
        cval = find_cval(gate_obj.gatetype)
-       if(value == cframe.Roth.invert(cval) and value != (cframe.Roth.D or cframe.Roth.D_b or cframe.Roth.X)):
+       if(value == cval and value != (cframe.Roth.D or cframe.Roth.D_b or cframe.Roth.X)):
           val = cframe.Roth.invert(cval)
           for item in gate_obj.fanin:
              imply_and_check(circuit, faults, item, val, D_drive)
+       if(value == cval and  check_gate_out != (cframe.Roth.D or cframe.Roth.D_b or cframe.Roth.X)):
+         if check_gate_out != value:
+              return "Failure"
+
        
       
 
