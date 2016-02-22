@@ -8988,3 +8988,726 @@
 02/20/2016 07:32:15 PM Roth: operate	type:   AND	returns: Roth.X
 02/20/2016 07:32:15 PM Roth: operate	type:   AND	returns: Roth.X
 02/20/2016 07:32:15 PM Roth: operate	type:   AND	returns: Roth.D_b
+02/20/2016 07:43:26 PM CIRCUIT: read_iscas called on file: bench/c17.bench
+02/20/2016 07:43:26 PM GATE: init	name:     1	type: INPUT	#in:     0	#out:     0
+02/20/2016 07:43:26 PM GATE: init	name:     2	type: INPUT	#in:     0	#out:     0
+02/20/2016 07:43:26 PM GATE: init	name:     3	type: INPUT	#in:     0	#out:     0
+02/20/2016 07:43:26 PM GATE: init	name:     6	type: INPUT	#in:     0	#out:     0
+02/20/2016 07:43:26 PM GATE: init	name:     7	type: INPUT	#in:     0	#out:     0
+02/20/2016 07:43:26 PM GATE: init	name:    10	type:  NAND	#in:     2	#out:     0
+02/20/2016 07:43:26 PM GATE: init	name:    11	type:  NAND	#in:     2	#out:     0
+02/20/2016 07:43:26 PM GATE: init	name:    16	type:  NAND	#in:     2	#out:     0
+02/20/2016 07:43:26 PM GATE: init	name:    19	type:  NAND	#in:     2	#out:     0
+02/20/2016 07:43:26 PM GATE: init	name:    22	type:  NAND	#in:     2	#out:     0
+02/20/2016 07:43:26 PM GATE: init	name:    23	type:  NAND	#in:     2	#out:     0
+02/20/2016 07:43:26 PM CIRCUIT: read_iscas	gate:     1	type: INPUT	fanin: []
+02/20/2016 07:43:26 PM CIRCUIT: read_iscas	gate:     2	type: INPUT	fanin: []
+02/20/2016 07:43:26 PM CIRCUIT: read_iscas	gate:     3	type: INPUT	fanin: []
+02/20/2016 07:43:26 PM CIRCUIT: read_iscas	gate:     6	type: INPUT	fanin: []
+02/20/2016 07:43:26 PM CIRCUIT: read_iscas	gate:     7	type: INPUT	fanin: []
+02/20/2016 07:43:26 PM CIRCUIT: read_iscas	gate:    10	type:  NAND	fanin: ['1', '3']
+02/20/2016 07:43:26 PM CIRCUIT: read_iscas	gate:    11	type:  NAND	fanin: ['3', '6']
+02/20/2016 07:43:26 PM CIRCUIT: read_iscas	gate:    16	type:  NAND	fanin: ['2', '11']
+02/20/2016 07:43:26 PM CIRCUIT: read_iscas	gate:    19	type:  NAND	fanin: ['11', '7']
+02/20/2016 07:43:26 PM CIRCUIT: read_iscas	gate:    22	type:  NAND	fanin: ['10', '16']
+02/20/2016 07:43:26 PM CIRCUIT: read_iscas	gate:    23	type:  NAND	fanin: ['16', '19']
+02/20/2016 07:43:26 PM Circuit: add_gates	name:     1	type: INPUT
+02/20/2016 07:43:26 PM Circuit: add_gates	name:     2	type: INPUT
+02/20/2016 07:43:26 PM Circuit: add_gates	name:     3	type: INPUT
+02/20/2016 07:43:26 PM Circuit: add_gates	name:     6	type: INPUT
+02/20/2016 07:43:26 PM Circuit: add_gates	name:     7	type: INPUT
+02/20/2016 07:43:26 PM Circuit: add_gates	name:    10	type: NAND
+02/20/2016 07:43:26 PM Circuit: add_gates	name:    11	type: NAND
+02/20/2016 07:43:26 PM Circuit: add_gates	name:    16	type: NAND
+02/20/2016 07:43:26 PM Circuit: add_gates	name:    19	type: NAND
+02/20/2016 07:43:26 PM Circuit: add_gates	name:    22	type: NAND
+02/20/2016 07:43:26 PM Circuit: add_gates	name:    23	type: NAND
+02/20/2016 07:43:26 PM Roth: operate	type:   AND	returns: Roth.X
+02/20/2016 07:43:26 PM Roth: operate	type:   AND	returns: Roth.One
+02/20/2016 07:43:26 PM Roth: operate	type:   AND	returns: Roth.X
+02/20/2016 07:43:26 PM Roth: operate	type:   AND	returns: Roth.X
+02/20/2016 07:43:26 PM Roth: operate	type:   AND	returns: Roth.D_b
+02/20/2016 07:43:26 PM Roth: operate	type:   AND	returns: Roth.X
+02/20/2016 07:43:55 PM CIRCUIT: read_iscas called on file: bench/c17.bench
+02/20/2016 07:43:55 PM GATE: init	name:     1	type: INPUT	#in:     0	#out:     0
+02/20/2016 07:43:55 PM GATE: init	name:     2	type: INPUT	#in:     0	#out:     0
+02/20/2016 07:43:55 PM GATE: init	name:     3	type: INPUT	#in:     0	#out:     0
+02/20/2016 07:43:55 PM GATE: init	name:     6	type: INPUT	#in:     0	#out:     0
+02/20/2016 07:43:55 PM GATE: init	name:     7	type: INPUT	#in:     0	#out:     0
+02/20/2016 07:43:55 PM GATE: init	name:    10	type:  NAND	#in:     2	#out:     0
+02/20/2016 07:43:55 PM GATE: init	name:    11	type:  NAND	#in:     2	#out:     0
+02/20/2016 07:43:55 PM GATE: init	name:    16	type:  NAND	#in:     2	#out:     0
+02/20/2016 07:43:55 PM GATE: init	name:    19	type:  NAND	#in:     2	#out:     0
+02/20/2016 07:43:55 PM GATE: init	name:    22	type:  NAND	#in:     2	#out:     0
+02/20/2016 07:43:55 PM GATE: init	name:    23	type:  NAND	#in:     2	#out:     0
+02/20/2016 07:43:55 PM CIRCUIT: read_iscas	gate:     1	type: INPUT	fanin: []
+02/20/2016 07:43:55 PM CIRCUIT: read_iscas	gate:     2	type: INPUT	fanin: []
+02/20/2016 07:43:55 PM CIRCUIT: read_iscas	gate:     3	type: INPUT	fanin: []
+02/20/2016 07:43:55 PM CIRCUIT: read_iscas	gate:     6	type: INPUT	fanin: []
+02/20/2016 07:43:55 PM CIRCUIT: read_iscas	gate:     7	type: INPUT	fanin: []
+02/20/2016 07:43:55 PM CIRCUIT: read_iscas	gate:    10	type:  NAND	fanin: ['1', '3']
+02/20/2016 07:43:55 PM CIRCUIT: read_iscas	gate:    11	type:  NAND	fanin: ['3', '6']
+02/20/2016 07:43:55 PM CIRCUIT: read_iscas	gate:    16	type:  NAND	fanin: ['2', '11']
+02/20/2016 07:43:55 PM CIRCUIT: read_iscas	gate:    19	type:  NAND	fanin: ['11', '7']
+02/20/2016 07:43:55 PM CIRCUIT: read_iscas	gate:    22	type:  NAND	fanin: ['10', '16']
+02/20/2016 07:43:55 PM CIRCUIT: read_iscas	gate:    23	type:  NAND	fanin: ['16', '19']
+02/20/2016 07:43:55 PM Circuit: add_gates	name:     1	type: INPUT
+02/20/2016 07:43:55 PM Circuit: add_gates	name:     2	type: INPUT
+02/20/2016 07:43:55 PM Circuit: add_gates	name:     3	type: INPUT
+02/20/2016 07:43:55 PM Circuit: add_gates	name:     6	type: INPUT
+02/20/2016 07:43:55 PM Circuit: add_gates	name:     7	type: INPUT
+02/20/2016 07:43:55 PM Circuit: add_gates	name:    10	type: NAND
+02/20/2016 07:43:55 PM Circuit: add_gates	name:    11	type: NAND
+02/20/2016 07:43:55 PM Circuit: add_gates	name:    16	type: NAND
+02/20/2016 07:43:55 PM Circuit: add_gates	name:    19	type: NAND
+02/20/2016 07:43:55 PM Circuit: add_gates	name:    22	type: NAND
+02/20/2016 07:43:55 PM Circuit: add_gates	name:    23	type: NAND
+02/20/2016 07:43:55 PM Roth: operate	type:   AND	returns: Roth.X
+02/20/2016 07:43:55 PM Roth: operate	type:   AND	returns: Roth.X
+02/20/2016 07:43:55 PM Roth: operate	type:   AND	returns: Roth.One
+02/20/2016 07:43:55 PM Roth: operate	type:   AND	returns: Roth.X
+02/20/2016 07:43:55 PM Roth: operate	type:   AND	returns: Roth.X
+02/20/2016 07:43:55 PM Roth: operate	type:   AND	returns: Roth.D_b
+02/20/2016 07:44:43 PM CIRCUIT: read_iscas called on file: bench/c17.bench
+02/20/2016 07:44:43 PM GATE: init	name:     1	type: INPUT	#in:     0	#out:     0
+02/20/2016 07:44:43 PM GATE: init	name:     2	type: INPUT	#in:     0	#out:     0
+02/20/2016 07:44:43 PM GATE: init	name:     3	type: INPUT	#in:     0	#out:     0
+02/20/2016 07:44:43 PM GATE: init	name:     6	type: INPUT	#in:     0	#out:     0
+02/20/2016 07:44:43 PM GATE: init	name:     7	type: INPUT	#in:     0	#out:     0
+02/20/2016 07:44:43 PM GATE: init	name:    10	type:  NAND	#in:     2	#out:     0
+02/20/2016 07:44:43 PM GATE: init	name:    11	type:  NAND	#in:     2	#out:     0
+02/20/2016 07:44:43 PM GATE: init	name:    16	type:  NAND	#in:     2	#out:     0
+02/20/2016 07:44:43 PM GATE: init	name:    19	type:  NAND	#in:     2	#out:     0
+02/20/2016 07:44:43 PM GATE: init	name:    22	type:  NAND	#in:     2	#out:     0
+02/20/2016 07:44:43 PM GATE: init	name:    23	type:  NAND	#in:     2	#out:     0
+02/20/2016 07:44:43 PM CIRCUIT: read_iscas	gate:     1	type: INPUT	fanin: []
+02/20/2016 07:44:43 PM CIRCUIT: read_iscas	gate:     2	type: INPUT	fanin: []
+02/20/2016 07:44:43 PM CIRCUIT: read_iscas	gate:     3	type: INPUT	fanin: []
+02/20/2016 07:44:43 PM CIRCUIT: read_iscas	gate:     6	type: INPUT	fanin: []
+02/20/2016 07:44:43 PM CIRCUIT: read_iscas	gate:     7	type: INPUT	fanin: []
+02/20/2016 07:44:43 PM CIRCUIT: read_iscas	gate:    10	type:  NAND	fanin: ['1', '3']
+02/20/2016 07:44:43 PM CIRCUIT: read_iscas	gate:    11	type:  NAND	fanin: ['3', '6']
+02/20/2016 07:44:43 PM CIRCUIT: read_iscas	gate:    16	type:  NAND	fanin: ['2', '11']
+02/20/2016 07:44:43 PM CIRCUIT: read_iscas	gate:    19	type:  NAND	fanin: ['11', '7']
+02/20/2016 07:44:43 PM CIRCUIT: read_iscas	gate:    22	type:  NAND	fanin: ['10', '16']
+02/20/2016 07:44:43 PM CIRCUIT: read_iscas	gate:    23	type:  NAND	fanin: ['16', '19']
+02/20/2016 07:44:43 PM Circuit: add_gates	name:     1	type: INPUT
+02/20/2016 07:44:43 PM Circuit: add_gates	name:     2	type: INPUT
+02/20/2016 07:44:43 PM Circuit: add_gates	name:     3	type: INPUT
+02/20/2016 07:44:43 PM Circuit: add_gates	name:     6	type: INPUT
+02/20/2016 07:44:43 PM Circuit: add_gates	name:     7	type: INPUT
+02/20/2016 07:44:43 PM Circuit: add_gates	name:    10	type: NAND
+02/20/2016 07:44:43 PM Circuit: add_gates	name:    11	type: NAND
+02/20/2016 07:44:43 PM Circuit: add_gates	name:    16	type: NAND
+02/20/2016 07:44:43 PM Circuit: add_gates	name:    19	type: NAND
+02/20/2016 07:44:43 PM Circuit: add_gates	name:    22	type: NAND
+02/20/2016 07:44:43 PM Circuit: add_gates	name:    23	type: NAND
+02/20/2016 07:44:43 PM Roth: operate	type:   AND	returns: Roth.X
+02/20/2016 07:44:43 PM Roth: operate	type:   AND	returns: Roth.X
+02/20/2016 07:44:43 PM Roth: operate	type:   AND	returns: Roth.One
+02/20/2016 07:44:43 PM Roth: operate	type:   AND	returns: Roth.X
+02/20/2016 07:44:43 PM Roth: operate	type:   AND	returns: Roth.D_b
+02/20/2016 07:44:43 PM Roth: operate	type:   AND	returns: Roth.X
+02/20/2016 07:46:27 PM CIRCUIT: read_iscas called on file: bench/c17.bench
+02/20/2016 07:46:27 PM GATE: init	name:     1	type: INPUT	#in:     0	#out:     0
+02/20/2016 07:46:27 PM GATE: init	name:     2	type: INPUT	#in:     0	#out:     0
+02/20/2016 07:46:27 PM GATE: init	name:     3	type: INPUT	#in:     0	#out:     0
+02/20/2016 07:46:27 PM GATE: init	name:     6	type: INPUT	#in:     0	#out:     0
+02/20/2016 07:46:27 PM GATE: init	name:     7	type: INPUT	#in:     0	#out:     0
+02/20/2016 07:46:27 PM GATE: init	name:    10	type:  NAND	#in:     2	#out:     0
+02/20/2016 07:46:27 PM GATE: init	name:    11	type:  NAND	#in:     2	#out:     0
+02/20/2016 07:46:27 PM GATE: init	name:    16	type:  NAND	#in:     2	#out:     0
+02/20/2016 07:46:27 PM GATE: init	name:    19	type:  NAND	#in:     2	#out:     0
+02/20/2016 07:46:27 PM GATE: init	name:    22	type:  NAND	#in:     2	#out:     0
+02/20/2016 07:46:27 PM GATE: init	name:    23	type:  NAND	#in:     2	#out:     0
+02/20/2016 07:46:27 PM CIRCUIT: read_iscas	gate:     1	type: INPUT	fanin: []
+02/20/2016 07:46:27 PM CIRCUIT: read_iscas	gate:     2	type: INPUT	fanin: []
+02/20/2016 07:46:27 PM CIRCUIT: read_iscas	gate:     3	type: INPUT	fanin: []
+02/20/2016 07:46:27 PM CIRCUIT: read_iscas	gate:     6	type: INPUT	fanin: []
+02/20/2016 07:46:27 PM CIRCUIT: read_iscas	gate:     7	type: INPUT	fanin: []
+02/20/2016 07:46:27 PM CIRCUIT: read_iscas	gate:    10	type:  NAND	fanin: ['1', '3']
+02/20/2016 07:46:27 PM CIRCUIT: read_iscas	gate:    11	type:  NAND	fanin: ['3', '6']
+02/20/2016 07:46:27 PM CIRCUIT: read_iscas	gate:    16	type:  NAND	fanin: ['2', '11']
+02/20/2016 07:46:27 PM CIRCUIT: read_iscas	gate:    19	type:  NAND	fanin: ['11', '7']
+02/20/2016 07:46:27 PM CIRCUIT: read_iscas	gate:    22	type:  NAND	fanin: ['10', '16']
+02/20/2016 07:46:27 PM CIRCUIT: read_iscas	gate:    23	type:  NAND	fanin: ['16', '19']
+02/20/2016 07:46:27 PM Circuit: add_gates	name:     1	type: INPUT
+02/20/2016 07:46:27 PM Circuit: add_gates	name:     2	type: INPUT
+02/20/2016 07:46:27 PM Circuit: add_gates	name:     3	type: INPUT
+02/20/2016 07:46:27 PM Circuit: add_gates	name:     6	type: INPUT
+02/20/2016 07:46:27 PM Circuit: add_gates	name:     7	type: INPUT
+02/20/2016 07:46:27 PM Circuit: add_gates	name:    10	type: NAND
+02/20/2016 07:46:27 PM Circuit: add_gates	name:    11	type: NAND
+02/20/2016 07:46:27 PM Circuit: add_gates	name:    16	type: NAND
+02/20/2016 07:46:27 PM Circuit: add_gates	name:    19	type: NAND
+02/20/2016 07:46:27 PM Circuit: add_gates	name:    22	type: NAND
+02/20/2016 07:46:27 PM Circuit: add_gates	name:    23	type: NAND
+02/20/2016 07:46:27 PM Roth: operate	type:   AND	returns: Roth.X
+02/20/2016 07:46:27 PM Roth: operate	type:   AND	returns: Roth.One
+02/20/2016 07:46:27 PM Roth: operate	type:   AND	returns: Roth.X
+02/20/2016 07:46:27 PM Roth: operate	type:   AND	returns: Roth.X
+02/20/2016 07:46:27 PM Roth: operate	type:   AND	returns: Roth.X
+02/20/2016 07:46:27 PM Roth: operate	type:   AND	returns: Roth.D_b
+02/20/2016 07:48:48 PM CIRCUIT: read_iscas called on file: bench/c17.bench
+02/20/2016 07:48:48 PM GATE: init	name:     1	type: INPUT	#in:     0	#out:     0
+02/20/2016 07:48:48 PM GATE: init	name:     2	type: INPUT	#in:     0	#out:     0
+02/20/2016 07:48:48 PM GATE: init	name:     3	type: INPUT	#in:     0	#out:     0
+02/20/2016 07:48:48 PM GATE: init	name:     6	type: INPUT	#in:     0	#out:     0
+02/20/2016 07:48:48 PM GATE: init	name:     7	type: INPUT	#in:     0	#out:     0
+02/20/2016 07:48:48 PM GATE: init	name:    10	type:  NAND	#in:     2	#out:     0
+02/20/2016 07:48:48 PM GATE: init	name:    11	type:  NAND	#in:     2	#out:     0
+02/20/2016 07:48:48 PM GATE: init	name:    16	type:  NAND	#in:     2	#out:     0
+02/20/2016 07:48:48 PM GATE: init	name:    19	type:  NAND	#in:     2	#out:     0
+02/20/2016 07:48:48 PM GATE: init	name:    22	type:  NAND	#in:     2	#out:     0
+02/20/2016 07:48:48 PM GATE: init	name:    23	type:  NAND	#in:     2	#out:     0
+02/20/2016 07:48:48 PM CIRCUIT: read_iscas	gate:     1	type: INPUT	fanin: []
+02/20/2016 07:48:48 PM CIRCUIT: read_iscas	gate:     2	type: INPUT	fanin: []
+02/20/2016 07:48:48 PM CIRCUIT: read_iscas	gate:     3	type: INPUT	fanin: []
+02/20/2016 07:48:48 PM CIRCUIT: read_iscas	gate:     6	type: INPUT	fanin: []
+02/20/2016 07:48:48 PM CIRCUIT: read_iscas	gate:     7	type: INPUT	fanin: []
+02/20/2016 07:48:48 PM CIRCUIT: read_iscas	gate:    10	type:  NAND	fanin: ['1', '3']
+02/20/2016 07:48:48 PM CIRCUIT: read_iscas	gate:    11	type:  NAND	fanin: ['3', '6']
+02/20/2016 07:48:48 PM CIRCUIT: read_iscas	gate:    16	type:  NAND	fanin: ['2', '11']
+02/20/2016 07:48:48 PM CIRCUIT: read_iscas	gate:    19	type:  NAND	fanin: ['11', '7']
+02/20/2016 07:48:48 PM CIRCUIT: read_iscas	gate:    22	type:  NAND	fanin: ['10', '16']
+02/20/2016 07:48:48 PM CIRCUIT: read_iscas	gate:    23	type:  NAND	fanin: ['16', '19']
+02/20/2016 07:48:48 PM Circuit: add_gates	name:     1	type: INPUT
+02/20/2016 07:48:48 PM Circuit: add_gates	name:     2	type: INPUT
+02/20/2016 07:48:48 PM Circuit: add_gates	name:     3	type: INPUT
+02/20/2016 07:48:48 PM Circuit: add_gates	name:     6	type: INPUT
+02/20/2016 07:48:48 PM Circuit: add_gates	name:     7	type: INPUT
+02/20/2016 07:48:48 PM Circuit: add_gates	name:    10	type: NAND
+02/20/2016 07:48:48 PM Circuit: add_gates	name:    11	type: NAND
+02/20/2016 07:48:48 PM Circuit: add_gates	name:    16	type: NAND
+02/20/2016 07:48:48 PM Circuit: add_gates	name:    19	type: NAND
+02/20/2016 07:48:48 PM Circuit: add_gates	name:    22	type: NAND
+02/20/2016 07:48:48 PM Circuit: add_gates	name:    23	type: NAND
+02/20/2016 07:48:48 PM Roth: operate	type:   AND	returns: Roth.X
+02/20/2016 07:49:57 PM CIRCUIT: read_iscas called on file: bench/c17.bench
+02/20/2016 07:49:57 PM GATE: init	name:     1	type: INPUT	#in:     0	#out:     0
+02/20/2016 07:49:57 PM GATE: init	name:     2	type: INPUT	#in:     0	#out:     0
+02/20/2016 07:49:57 PM GATE: init	name:     3	type: INPUT	#in:     0	#out:     0
+02/20/2016 07:49:57 PM GATE: init	name:     6	type: INPUT	#in:     0	#out:     0
+02/20/2016 07:49:57 PM GATE: init	name:     7	type: INPUT	#in:     0	#out:     0
+02/20/2016 07:49:57 PM GATE: init	name:    10	type:  NAND	#in:     2	#out:     0
+02/20/2016 07:49:57 PM GATE: init	name:    11	type:  NAND	#in:     2	#out:     0
+02/20/2016 07:49:57 PM GATE: init	name:    16	type:  NAND	#in:     2	#out:     0
+02/20/2016 07:49:57 PM GATE: init	name:    19	type:  NAND	#in:     2	#out:     0
+02/20/2016 07:49:57 PM GATE: init	name:    22	type:  NAND	#in:     2	#out:     0
+02/20/2016 07:49:57 PM GATE: init	name:    23	type:  NAND	#in:     2	#out:     0
+02/20/2016 07:49:57 PM CIRCUIT: read_iscas	gate:     1	type: INPUT	fanin: []
+02/20/2016 07:49:57 PM CIRCUIT: read_iscas	gate:     2	type: INPUT	fanin: []
+02/20/2016 07:49:57 PM CIRCUIT: read_iscas	gate:     3	type: INPUT	fanin: []
+02/20/2016 07:49:57 PM CIRCUIT: read_iscas	gate:     6	type: INPUT	fanin: []
+02/20/2016 07:49:57 PM CIRCUIT: read_iscas	gate:     7	type: INPUT	fanin: []
+02/20/2016 07:49:57 PM CIRCUIT: read_iscas	gate:    10	type:  NAND	fanin: ['1', '3']
+02/20/2016 07:49:57 PM CIRCUIT: read_iscas	gate:    11	type:  NAND	fanin: ['3', '6']
+02/20/2016 07:49:57 PM CIRCUIT: read_iscas	gate:    16	type:  NAND	fanin: ['2', '11']
+02/20/2016 07:49:57 PM CIRCUIT: read_iscas	gate:    19	type:  NAND	fanin: ['11', '7']
+02/20/2016 07:49:57 PM CIRCUIT: read_iscas	gate:    22	type:  NAND	fanin: ['10', '16']
+02/20/2016 07:49:57 PM CIRCUIT: read_iscas	gate:    23	type:  NAND	fanin: ['16', '19']
+02/20/2016 07:49:57 PM Circuit: add_gates	name:     1	type: INPUT
+02/20/2016 07:49:57 PM Circuit: add_gates	name:     2	type: INPUT
+02/20/2016 07:49:57 PM Circuit: add_gates	name:     3	type: INPUT
+02/20/2016 07:49:57 PM Circuit: add_gates	name:     6	type: INPUT
+02/20/2016 07:49:57 PM Circuit: add_gates	name:     7	type: INPUT
+02/20/2016 07:49:57 PM Circuit: add_gates	name:    10	type: NAND
+02/20/2016 07:49:57 PM Circuit: add_gates	name:    11	type: NAND
+02/20/2016 07:49:57 PM Circuit: add_gates	name:    16	type: NAND
+02/20/2016 07:49:57 PM Circuit: add_gates	name:    19	type: NAND
+02/20/2016 07:49:57 PM Circuit: add_gates	name:    22	type: NAND
+02/20/2016 07:49:57 PM Circuit: add_gates	name:    23	type: NAND
+02/20/2016 07:49:57 PM Roth: operate	type:   AND	returns: Roth.X
+02/20/2016 07:49:57 PM Roth: operate	type:   AND	returns: Roth.One
+02/20/2016 07:49:57 PM Roth: operate	type:   AND	returns: Roth.X
+02/20/2016 07:49:57 PM Roth: operate	type:   AND	returns: Roth.X
+02/20/2016 07:49:57 PM Roth: operate	type:   AND	returns: Roth.X
+02/20/2016 07:49:57 PM Roth: operate	type:   AND	returns: Roth.D_b
+02/20/2016 07:51:00 PM CIRCUIT: read_iscas called on file: bench/c17.bench
+02/20/2016 07:51:00 PM GATE: init	name:     1	type: INPUT	#in:     0	#out:     0
+02/20/2016 07:51:00 PM GATE: init	name:     2	type: INPUT	#in:     0	#out:     0
+02/20/2016 07:51:00 PM GATE: init	name:     3	type: INPUT	#in:     0	#out:     0
+02/20/2016 07:51:00 PM GATE: init	name:     6	type: INPUT	#in:     0	#out:     0
+02/20/2016 07:51:00 PM GATE: init	name:     7	type: INPUT	#in:     0	#out:     0
+02/20/2016 07:51:00 PM GATE: init	name:    10	type:  NAND	#in:     2	#out:     0
+02/20/2016 07:51:00 PM GATE: init	name:    11	type:  NAND	#in:     2	#out:     0
+02/20/2016 07:51:00 PM GATE: init	name:    16	type:  NAND	#in:     2	#out:     0
+02/20/2016 07:51:00 PM GATE: init	name:    19	type:  NAND	#in:     2	#out:     0
+02/20/2016 07:51:00 PM GATE: init	name:    22	type:  NAND	#in:     2	#out:     0
+02/20/2016 07:51:00 PM GATE: init	name:    23	type:  NAND	#in:     2	#out:     0
+02/20/2016 07:51:00 PM CIRCUIT: read_iscas	gate:     1	type: INPUT	fanin: []
+02/20/2016 07:51:00 PM CIRCUIT: read_iscas	gate:     2	type: INPUT	fanin: []
+02/20/2016 07:51:00 PM CIRCUIT: read_iscas	gate:     3	type: INPUT	fanin: []
+02/20/2016 07:51:00 PM CIRCUIT: read_iscas	gate:     6	type: INPUT	fanin: []
+02/20/2016 07:51:00 PM CIRCUIT: read_iscas	gate:     7	type: INPUT	fanin: []
+02/20/2016 07:51:00 PM CIRCUIT: read_iscas	gate:    10	type:  NAND	fanin: ['1', '3']
+02/20/2016 07:51:00 PM CIRCUIT: read_iscas	gate:    11	type:  NAND	fanin: ['3', '6']
+02/20/2016 07:51:00 PM CIRCUIT: read_iscas	gate:    16	type:  NAND	fanin: ['2', '11']
+02/20/2016 07:51:00 PM CIRCUIT: read_iscas	gate:    19	type:  NAND	fanin: ['11', '7']
+02/20/2016 07:51:00 PM CIRCUIT: read_iscas	gate:    22	type:  NAND	fanin: ['10', '16']
+02/20/2016 07:51:00 PM CIRCUIT: read_iscas	gate:    23	type:  NAND	fanin: ['16', '19']
+02/20/2016 07:51:00 PM Circuit: add_gates	name:     1	type: INPUT
+02/20/2016 07:51:00 PM Circuit: add_gates	name:     2	type: INPUT
+02/20/2016 07:51:00 PM Circuit: add_gates	name:     3	type: INPUT
+02/20/2016 07:51:00 PM Circuit: add_gates	name:     6	type: INPUT
+02/20/2016 07:51:00 PM Circuit: add_gates	name:     7	type: INPUT
+02/20/2016 07:51:00 PM Circuit: add_gates	name:    10	type: NAND
+02/20/2016 07:51:00 PM Circuit: add_gates	name:    11	type: NAND
+02/20/2016 07:51:00 PM Circuit: add_gates	name:    16	type: NAND
+02/20/2016 07:51:00 PM Circuit: add_gates	name:    19	type: NAND
+02/20/2016 07:51:00 PM Circuit: add_gates	name:    22	type: NAND
+02/20/2016 07:51:00 PM Circuit: add_gates	name:    23	type: NAND
+02/20/2016 07:51:00 PM Roth: operate	type:   AND	returns: Roth.X
+02/20/2016 07:51:00 PM Roth: operate	type:   AND	returns: Roth.X
+02/20/2016 07:51:00 PM Roth: operate	type:   AND	returns: Roth.X
+02/20/2016 07:51:00 PM Roth: operate	type:   AND	returns: Roth.X
+02/20/2016 07:55:00 PM CIRCUIT: read_iscas called on file: bench/c17.bench
+02/20/2016 07:55:00 PM GATE: init	name:     1	type: INPUT	#in:     0	#out:     0
+02/20/2016 07:55:00 PM GATE: init	name:     2	type: INPUT	#in:     0	#out:     0
+02/20/2016 07:55:00 PM GATE: init	name:     3	type: INPUT	#in:     0	#out:     0
+02/20/2016 07:55:00 PM GATE: init	name:     6	type: INPUT	#in:     0	#out:     0
+02/20/2016 07:55:00 PM GATE: init	name:     7	type: INPUT	#in:     0	#out:     0
+02/20/2016 07:55:00 PM GATE: init	name:    10	type:  NAND	#in:     2	#out:     0
+02/20/2016 07:55:00 PM GATE: init	name:    11	type:  NAND	#in:     2	#out:     0
+02/20/2016 07:55:00 PM GATE: init	name:    16	type:  NAND	#in:     2	#out:     0
+02/20/2016 07:55:00 PM GATE: init	name:    19	type:  NAND	#in:     2	#out:     0
+02/20/2016 07:55:00 PM GATE: init	name:    22	type:  NAND	#in:     2	#out:     0
+02/20/2016 07:55:00 PM GATE: init	name:    23	type:  NAND	#in:     2	#out:     0
+02/20/2016 07:55:00 PM CIRCUIT: read_iscas	gate:     1	type: INPUT	fanin: []
+02/20/2016 07:55:00 PM CIRCUIT: read_iscas	gate:     2	type: INPUT	fanin: []
+02/20/2016 07:55:00 PM CIRCUIT: read_iscas	gate:     3	type: INPUT	fanin: []
+02/20/2016 07:55:00 PM CIRCUIT: read_iscas	gate:     6	type: INPUT	fanin: []
+02/20/2016 07:55:00 PM CIRCUIT: read_iscas	gate:     7	type: INPUT	fanin: []
+02/20/2016 07:55:00 PM CIRCUIT: read_iscas	gate:    10	type:  NAND	fanin: ['1', '3']
+02/20/2016 07:55:00 PM CIRCUIT: read_iscas	gate:    11	type:  NAND	fanin: ['3', '6']
+02/20/2016 07:55:00 PM CIRCUIT: read_iscas	gate:    16	type:  NAND	fanin: ['2', '11']
+02/20/2016 07:55:00 PM CIRCUIT: read_iscas	gate:    19	type:  NAND	fanin: ['11', '7']
+02/20/2016 07:55:00 PM CIRCUIT: read_iscas	gate:    22	type:  NAND	fanin: ['10', '16']
+02/20/2016 07:55:00 PM CIRCUIT: read_iscas	gate:    23	type:  NAND	fanin: ['16', '19']
+02/20/2016 07:55:00 PM Circuit: add_gates	name:     1	type: INPUT
+02/20/2016 07:55:00 PM Circuit: add_gates	name:     2	type: INPUT
+02/20/2016 07:55:00 PM Circuit: add_gates	name:     3	type: INPUT
+02/20/2016 07:55:00 PM Circuit: add_gates	name:     6	type: INPUT
+02/20/2016 07:55:00 PM Circuit: add_gates	name:     7	type: INPUT
+02/20/2016 07:55:00 PM Circuit: add_gates	name:    10	type: NAND
+02/20/2016 07:55:00 PM Circuit: add_gates	name:    11	type: NAND
+02/20/2016 07:55:00 PM Circuit: add_gates	name:    16	type: NAND
+02/20/2016 07:55:00 PM Circuit: add_gates	name:    19	type: NAND
+02/20/2016 07:55:00 PM Circuit: add_gates	name:    22	type: NAND
+02/20/2016 07:55:00 PM Circuit: add_gates	name:    23	type: NAND
+02/20/2016 07:55:00 PM Roth: operate	type:   AND	returns: Roth.X
+02/20/2016 07:55:00 PM Roth: operate	type:   AND	returns: Roth.One
+02/20/2016 07:55:00 PM Roth: operate	type:   AND	returns: Roth.X
+02/20/2016 07:55:00 PM Roth: operate	type:   AND	returns: Roth.X
+02/20/2016 07:55:00 PM Roth: operate	type:   AND	returns: Roth.D_b
+02/20/2016 07:55:00 PM Roth: operate	type:   AND	returns: Roth.X
+02/20/2016 07:59:51 PM CIRCUIT: read_iscas called on file: bench/c17.bench
+02/20/2016 07:59:51 PM GATE: init	name:     1	type: INPUT	#in:     0	#out:     0
+02/20/2016 07:59:51 PM GATE: init	name:     2	type: INPUT	#in:     0	#out:     0
+02/20/2016 07:59:51 PM GATE: init	name:     3	type: INPUT	#in:     0	#out:     0
+02/20/2016 07:59:51 PM GATE: init	name:     6	type: INPUT	#in:     0	#out:     0
+02/20/2016 07:59:51 PM GATE: init	name:     7	type: INPUT	#in:     0	#out:     0
+02/20/2016 07:59:51 PM GATE: init	name:    10	type:  NAND	#in:     2	#out:     0
+02/20/2016 07:59:51 PM GATE: init	name:    11	type:  NAND	#in:     2	#out:     0
+02/20/2016 07:59:51 PM GATE: init	name:    16	type:  NAND	#in:     2	#out:     0
+02/20/2016 07:59:51 PM GATE: init	name:    19	type:  NAND	#in:     2	#out:     0
+02/20/2016 07:59:51 PM GATE: init	name:    22	type:  NAND	#in:     2	#out:     0
+02/20/2016 07:59:51 PM GATE: init	name:    23	type:  NAND	#in:     2	#out:     0
+02/20/2016 07:59:51 PM CIRCUIT: read_iscas	gate:     1	type: INPUT	fanin: []
+02/20/2016 07:59:51 PM CIRCUIT: read_iscas	gate:     2	type: INPUT	fanin: []
+02/20/2016 07:59:51 PM CIRCUIT: read_iscas	gate:     3	type: INPUT	fanin: []
+02/20/2016 07:59:51 PM CIRCUIT: read_iscas	gate:     6	type: INPUT	fanin: []
+02/20/2016 07:59:51 PM CIRCUIT: read_iscas	gate:     7	type: INPUT	fanin: []
+02/20/2016 07:59:51 PM CIRCUIT: read_iscas	gate:    10	type:  NAND	fanin: ['1', '3']
+02/20/2016 07:59:51 PM CIRCUIT: read_iscas	gate:    11	type:  NAND	fanin: ['3', '6']
+02/20/2016 07:59:51 PM CIRCUIT: read_iscas	gate:    16	type:  NAND	fanin: ['2', '11']
+02/20/2016 07:59:51 PM CIRCUIT: read_iscas	gate:    19	type:  NAND	fanin: ['11', '7']
+02/20/2016 07:59:51 PM CIRCUIT: read_iscas	gate:    22	type:  NAND	fanin: ['10', '16']
+02/20/2016 07:59:51 PM CIRCUIT: read_iscas	gate:    23	type:  NAND	fanin: ['16', '19']
+02/20/2016 07:59:51 PM Circuit: add_gates	name:     1	type: INPUT
+02/20/2016 07:59:51 PM Circuit: add_gates	name:     2	type: INPUT
+02/20/2016 07:59:51 PM Circuit: add_gates	name:     3	type: INPUT
+02/20/2016 07:59:51 PM Circuit: add_gates	name:     6	type: INPUT
+02/20/2016 07:59:51 PM Circuit: add_gates	name:     7	type: INPUT
+02/20/2016 07:59:51 PM Circuit: add_gates	name:    10	type: NAND
+02/20/2016 07:59:51 PM Circuit: add_gates	name:    11	type: NAND
+02/20/2016 07:59:51 PM Circuit: add_gates	name:    16	type: NAND
+02/20/2016 07:59:51 PM Circuit: add_gates	name:    19	type: NAND
+02/20/2016 07:59:51 PM Circuit: add_gates	name:    22	type: NAND
+02/20/2016 07:59:51 PM Circuit: add_gates	name:    23	type: NAND
+02/20/2016 07:59:51 PM Roth: operate	type:   AND	returns: Roth.X
+02/20/2016 07:59:51 PM Roth: operate	type:   AND	returns: Roth.X
+02/20/2016 07:59:51 PM Roth: operate	type:   AND	returns: Roth.X
+02/20/2016 07:59:51 PM Roth: operate	type:   AND	returns: Roth.X
+02/20/2016 08:01:27 PM CIRCUIT: read_iscas called on file: bench/c17.bench
+02/20/2016 08:01:27 PM GATE: init	name:     1	type: INPUT	#in:     0	#out:     0
+02/20/2016 08:01:27 PM GATE: init	name:     2	type: INPUT	#in:     0	#out:     0
+02/20/2016 08:01:27 PM GATE: init	name:     3	type: INPUT	#in:     0	#out:     0
+02/20/2016 08:01:27 PM GATE: init	name:     6	type: INPUT	#in:     0	#out:     0
+02/20/2016 08:01:27 PM GATE: init	name:     7	type: INPUT	#in:     0	#out:     0
+02/20/2016 08:01:27 PM GATE: init	name:    10	type:  NAND	#in:     2	#out:     0
+02/20/2016 08:01:27 PM GATE: init	name:    11	type:  NAND	#in:     2	#out:     0
+02/20/2016 08:01:27 PM GATE: init	name:    16	type:  NAND	#in:     2	#out:     0
+02/20/2016 08:01:27 PM GATE: init	name:    19	type:  NAND	#in:     2	#out:     0
+02/20/2016 08:01:27 PM GATE: init	name:    22	type:  NAND	#in:     2	#out:     0
+02/20/2016 08:01:27 PM GATE: init	name:    23	type:  NAND	#in:     2	#out:     0
+02/20/2016 08:01:27 PM CIRCUIT: read_iscas	gate:     1	type: INPUT	fanin: []
+02/20/2016 08:01:27 PM CIRCUIT: read_iscas	gate:     2	type: INPUT	fanin: []
+02/20/2016 08:01:27 PM CIRCUIT: read_iscas	gate:     3	type: INPUT	fanin: []
+02/20/2016 08:01:27 PM CIRCUIT: read_iscas	gate:     6	type: INPUT	fanin: []
+02/20/2016 08:01:27 PM CIRCUIT: read_iscas	gate:     7	type: INPUT	fanin: []
+02/20/2016 08:01:27 PM CIRCUIT: read_iscas	gate:    10	type:  NAND	fanin: ['1', '3']
+02/20/2016 08:01:27 PM CIRCUIT: read_iscas	gate:    11	type:  NAND	fanin: ['3', '6']
+02/20/2016 08:01:27 PM CIRCUIT: read_iscas	gate:    16	type:  NAND	fanin: ['2', '11']
+02/20/2016 08:01:27 PM CIRCUIT: read_iscas	gate:    19	type:  NAND	fanin: ['11', '7']
+02/20/2016 08:01:27 PM CIRCUIT: read_iscas	gate:    22	type:  NAND	fanin: ['10', '16']
+02/20/2016 08:01:27 PM CIRCUIT: read_iscas	gate:    23	type:  NAND	fanin: ['16', '19']
+02/20/2016 08:01:27 PM Circuit: add_gates	name:     1	type: INPUT
+02/20/2016 08:01:27 PM Circuit: add_gates	name:     2	type: INPUT
+02/20/2016 08:01:27 PM Circuit: add_gates	name:     3	type: INPUT
+02/20/2016 08:01:27 PM Circuit: add_gates	name:     6	type: INPUT
+02/20/2016 08:01:27 PM Circuit: add_gates	name:     7	type: INPUT
+02/20/2016 08:01:27 PM Circuit: add_gates	name:    10	type: NAND
+02/20/2016 08:01:27 PM Circuit: add_gates	name:    11	type: NAND
+02/20/2016 08:01:27 PM Circuit: add_gates	name:    16	type: NAND
+02/20/2016 08:01:27 PM Circuit: add_gates	name:    19	type: NAND
+02/20/2016 08:01:27 PM Circuit: add_gates	name:    22	type: NAND
+02/20/2016 08:01:27 PM Circuit: add_gates	name:    23	type: NAND
+02/20/2016 08:02:37 PM CIRCUIT: read_iscas called on file: bench/c17.bench
+02/20/2016 08:02:37 PM GATE: init	name:     1	type: INPUT	#in:     0	#out:     0
+02/20/2016 08:02:37 PM GATE: init	name:     2	type: INPUT	#in:     0	#out:     0
+02/20/2016 08:02:37 PM GATE: init	name:     3	type: INPUT	#in:     0	#out:     0
+02/20/2016 08:02:37 PM GATE: init	name:     6	type: INPUT	#in:     0	#out:     0
+02/20/2016 08:02:37 PM GATE: init	name:     7	type: INPUT	#in:     0	#out:     0
+02/20/2016 08:02:37 PM GATE: init	name:    10	type:  NAND	#in:     2	#out:     0
+02/20/2016 08:02:37 PM GATE: init	name:    11	type:  NAND	#in:     2	#out:     0
+02/20/2016 08:02:37 PM GATE: init	name:    16	type:  NAND	#in:     2	#out:     0
+02/20/2016 08:02:37 PM GATE: init	name:    19	type:  NAND	#in:     2	#out:     0
+02/20/2016 08:02:37 PM GATE: init	name:    22	type:  NAND	#in:     2	#out:     0
+02/20/2016 08:02:37 PM GATE: init	name:    23	type:  NAND	#in:     2	#out:     0
+02/20/2016 08:02:37 PM CIRCUIT: read_iscas	gate:     1	type: INPUT	fanin: []
+02/20/2016 08:02:37 PM CIRCUIT: read_iscas	gate:     2	type: INPUT	fanin: []
+02/20/2016 08:02:37 PM CIRCUIT: read_iscas	gate:     3	type: INPUT	fanin: []
+02/20/2016 08:02:37 PM CIRCUIT: read_iscas	gate:     6	type: INPUT	fanin: []
+02/20/2016 08:02:37 PM CIRCUIT: read_iscas	gate:     7	type: INPUT	fanin: []
+02/20/2016 08:02:37 PM CIRCUIT: read_iscas	gate:    10	type:  NAND	fanin: ['1', '3']
+02/20/2016 08:02:37 PM CIRCUIT: read_iscas	gate:    11	type:  NAND	fanin: ['3', '6']
+02/20/2016 08:02:37 PM CIRCUIT: read_iscas	gate:    16	type:  NAND	fanin: ['2', '11']
+02/20/2016 08:02:37 PM CIRCUIT: read_iscas	gate:    19	type:  NAND	fanin: ['11', '7']
+02/20/2016 08:02:37 PM CIRCUIT: read_iscas	gate:    22	type:  NAND	fanin: ['10', '16']
+02/20/2016 08:02:37 PM CIRCUIT: read_iscas	gate:    23	type:  NAND	fanin: ['16', '19']
+02/20/2016 08:02:37 PM Circuit: add_gates	name:     1	type: INPUT
+02/20/2016 08:02:37 PM Circuit: add_gates	name:     2	type: INPUT
+02/20/2016 08:02:37 PM Circuit: add_gates	name:     3	type: INPUT
+02/20/2016 08:02:37 PM Circuit: add_gates	name:     6	type: INPUT
+02/20/2016 08:02:37 PM Circuit: add_gates	name:     7	type: INPUT
+02/20/2016 08:02:37 PM Circuit: add_gates	name:    10	type: NAND
+02/20/2016 08:02:37 PM Circuit: add_gates	name:    11	type: NAND
+02/20/2016 08:02:37 PM Circuit: add_gates	name:    16	type: NAND
+02/20/2016 08:02:37 PM Circuit: add_gates	name:    19	type: NAND
+02/20/2016 08:02:37 PM Circuit: add_gates	name:    22	type: NAND
+02/20/2016 08:02:37 PM Circuit: add_gates	name:    23	type: NAND
+02/20/2016 08:02:37 PM Roth: operate	type:   AND	returns: Roth.X
+02/20/2016 08:02:37 PM Roth: operate	type:   AND	returns: Roth.X
+02/20/2016 08:02:37 PM Roth: operate	type:   AND	returns: Roth.X
+02/20/2016 08:02:37 PM Roth: operate	type:   AND	returns: Roth.X
+02/20/2016 08:04:19 PM CIRCUIT: read_iscas called on file: bench/c23.bench
+02/20/2016 08:04:19 PM GATE: init	name:    a0	type: INPUT	#in:     0	#out:     0
+02/20/2016 08:04:19 PM GATE: init	name:    a1	type: INPUT	#in:     0	#out:     0
+02/20/2016 08:04:19 PM GATE: init	name:    a2	type: INPUT	#in:     0	#out:     0
+02/20/2016 08:04:19 PM GATE: init	name:    a3	type: INPUT	#in:     0	#out:     0
+02/20/2016 08:04:19 PM GATE: init	name:    a4	type: INPUT	#in:     0	#out:     0
+02/20/2016 08:04:19 PM GATE: init	name:    a5	type: INPUT	#in:     0	#out:     0
+02/20/2016 08:04:19 PM GATE: init	name:    a6	type: INPUT	#in:     0	#out:     0
+02/20/2016 08:04:19 PM GATE: init	name:    a7	type: INPUT	#in:     0	#out:     0
+02/20/2016 08:04:19 PM GATE: init	name:    a8	type: INPUT	#in:     0	#out:     0
+02/20/2016 08:04:19 PM GATE: init	name:    a9	type: INPUT	#in:     0	#out:     0
+02/20/2016 08:04:19 PM GATE: init	name:   a10	type: INPUT	#in:     0	#out:     0
+02/20/2016 08:04:19 PM GATE: init	name:   a11	type: INPUT	#in:     0	#out:     0
+02/20/2016 08:04:19 PM GATE: init	name:   a12	type: INPUT	#in:     0	#out:     0
+02/20/2016 08:04:19 PM GATE: init	name:   a13	type: INPUT	#in:     0	#out:     0
+02/20/2016 08:04:19 PM GATE: init	name:    c0	type:  NAND	#in:     3	#out:     0
+02/20/2016 08:04:19 PM GATE: init	name:    c1	type:  NAND	#in:     3	#out:     0
+02/20/2016 08:04:19 PM GATE: init	name:    c2	type:  NAND	#in:     3	#out:     0
+02/20/2016 08:04:19 PM GATE: init	name:    c3	type:  NAND	#in:     3	#out:     0
+02/20/2016 08:04:19 PM GATE: init	name:    c4	type:    OR	#in:     2	#out:     0
+02/20/2016 08:04:19 PM GATE: init	name:    e0	type:  NAND	#in:     2	#out:     0
+02/20/2016 08:04:19 PM GATE: init	name:    e1	type:  NAND	#in:     2	#out:     0
+02/20/2016 08:04:19 PM GATE: init	name:    e2	type:   NOT	#in:     1	#out:     0
+02/20/2016 08:04:19 PM GATE: init	name:     f	type:  NAND	#in:     3	#out:     0
+02/20/2016 08:04:19 PM CIRCUIT: read_iscas	gate:    a0	type: INPUT	fanin: []
+02/20/2016 08:04:19 PM CIRCUIT: read_iscas	gate:    a1	type: INPUT	fanin: []
+02/20/2016 08:04:19 PM CIRCUIT: read_iscas	gate:    a2	type: INPUT	fanin: []
+02/20/2016 08:04:19 PM CIRCUIT: read_iscas	gate:    a3	type: INPUT	fanin: []
+02/20/2016 08:04:19 PM CIRCUIT: read_iscas	gate:    a4	type: INPUT	fanin: []
+02/20/2016 08:04:19 PM CIRCUIT: read_iscas	gate:    a5	type: INPUT	fanin: []
+02/20/2016 08:04:19 PM CIRCUIT: read_iscas	gate:    a6	type: INPUT	fanin: []
+02/20/2016 08:04:19 PM CIRCUIT: read_iscas	gate:    a7	type: INPUT	fanin: []
+02/20/2016 08:04:19 PM CIRCUIT: read_iscas	gate:    a8	type: INPUT	fanin: []
+02/20/2016 08:04:19 PM CIRCUIT: read_iscas	gate:    a9	type: INPUT	fanin: []
+02/20/2016 08:04:19 PM CIRCUIT: read_iscas	gate:   a10	type: INPUT	fanin: []
+02/20/2016 08:04:19 PM CIRCUIT: read_iscas	gate:   a11	type: INPUT	fanin: []
+02/20/2016 08:04:19 PM CIRCUIT: read_iscas	gate:   a12	type: INPUT	fanin: []
+02/20/2016 08:04:19 PM CIRCUIT: read_iscas	gate:   a13	type: INPUT	fanin: []
+02/20/2016 08:04:19 PM CIRCUIT: read_iscas	gate:    c0	type:  NAND	fanin: ['a0', 'a1', 'a2']
+02/20/2016 08:04:19 PM CIRCUIT: read_iscas	gate:    c1	type:  NAND	fanin: ['a3', 'a4', 'a5']
+02/20/2016 08:04:19 PM CIRCUIT: read_iscas	gate:    c2	type:  NAND	fanin: ['a6', 'a7', 'a8']
+02/20/2016 08:04:19 PM CIRCUIT: read_iscas	gate:    c3	type:  NAND	fanin: ['a9', 'a10', 'a11']
+02/20/2016 08:04:19 PM CIRCUIT: read_iscas	gate:    c4	type:    OR	fanin: ['a12', 'a13']
+02/20/2016 08:04:19 PM CIRCUIT: read_iscas	gate:    e0	type:  NAND	fanin: ['c0', 'c1']
+02/20/2016 08:04:19 PM CIRCUIT: read_iscas	gate:    e1	type:  NAND	fanin: ['c2', 'c3']
+02/20/2016 08:04:19 PM CIRCUIT: read_iscas	gate:    e2	type:   NOT	fanin: ['c4']
+02/20/2016 08:04:19 PM CIRCUIT: read_iscas	gate:     f	type:  NAND	fanin: ['e0', 'e1', 'e2']
+02/20/2016 08:04:19 PM Circuit: add_gates	name:    a0	type: INPUT
+02/20/2016 08:04:19 PM Circuit: add_gates	name:    a1	type: INPUT
+02/20/2016 08:04:19 PM Circuit: add_gates	name:    a2	type: INPUT
+02/20/2016 08:04:19 PM Circuit: add_gates	name:    a3	type: INPUT
+02/20/2016 08:04:19 PM Circuit: add_gates	name:    a4	type: INPUT
+02/20/2016 08:04:19 PM Circuit: add_gates	name:    a5	type: INPUT
+02/20/2016 08:04:19 PM Circuit: add_gates	name:    a6	type: INPUT
+02/20/2016 08:04:19 PM Circuit: add_gates	name:    a7	type: INPUT
+02/20/2016 08:04:19 PM Circuit: add_gates	name:    a8	type: INPUT
+02/20/2016 08:04:19 PM Circuit: add_gates	name:    a9	type: INPUT
+02/20/2016 08:04:19 PM Circuit: add_gates	name:   a10	type: INPUT
+02/20/2016 08:04:19 PM Circuit: add_gates	name:   a11	type: INPUT
+02/20/2016 08:04:19 PM Circuit: add_gates	name:   a12	type: INPUT
+02/20/2016 08:04:19 PM Circuit: add_gates	name:   a13	type: INPUT
+02/20/2016 08:04:19 PM Circuit: add_gates	name:    c0	type: NAND
+02/20/2016 08:04:19 PM Circuit: add_gates	name:    c1	type: NAND
+02/20/2016 08:04:19 PM Circuit: add_gates	name:    c2	type: NAND
+02/20/2016 08:04:19 PM Circuit: add_gates	name:    c3	type: NAND
+02/20/2016 08:04:19 PM Circuit: add_gates	name:    c4	type: OR
+02/20/2016 08:04:19 PM Circuit: add_gates	name:    e0	type: NAND
+02/20/2016 08:04:19 PM Circuit: add_gates	name:    e1	type: NAND
+02/20/2016 08:04:19 PM Circuit: add_gates	name:    e2	type: NOT
+02/20/2016 08:04:19 PM Circuit: add_gates	name:     f	type: NAND
+02/20/2016 08:04:19 PM Roth: operate	type:   AND	returns: Roth.X
+02/20/2016 08:04:19 PM Roth: operate	type:   AND	returns: Roth.X
+02/20/2016 08:04:19 PM Roth: operate	type:   AND	returns: Roth.X
+02/20/2016 08:04:19 PM Roth: operate	type:   AND	returns: Roth.Zero
+02/20/2016 08:04:19 PM Roth: operate	type:   AND	returns: Roth.X
+02/20/2016 09:28:42 PM CIRCUIT: read_iscas called on file: bench/c23.bench
+02/20/2016 09:28:42 PM GATE: init	name:    a0	type: INPUT	#in:     0	#out:     0
+02/20/2016 09:28:42 PM GATE: init	name:    a1	type: INPUT	#in:     0	#out:     0
+02/20/2016 09:28:42 PM GATE: init	name:    a2	type: INPUT	#in:     0	#out:     0
+02/20/2016 09:28:42 PM GATE: init	name:    a3	type: INPUT	#in:     0	#out:     0
+02/20/2016 09:28:42 PM GATE: init	name:    a4	type: INPUT	#in:     0	#out:     0
+02/20/2016 09:28:42 PM GATE: init	name:    a5	type: INPUT	#in:     0	#out:     0
+02/20/2016 09:28:42 PM GATE: init	name:    a6	type: INPUT	#in:     0	#out:     0
+02/20/2016 09:28:42 PM GATE: init	name:    a7	type: INPUT	#in:     0	#out:     0
+02/20/2016 09:28:42 PM GATE: init	name:    a8	type: INPUT	#in:     0	#out:     0
+02/20/2016 09:28:42 PM GATE: init	name:    a9	type: INPUT	#in:     0	#out:     0
+02/20/2016 09:28:42 PM GATE: init	name:   a10	type: INPUT	#in:     0	#out:     0
+02/20/2016 09:28:42 PM GATE: init	name:   a11	type: INPUT	#in:     0	#out:     0
+02/20/2016 09:28:42 PM GATE: init	name:   a12	type: INPUT	#in:     0	#out:     0
+02/20/2016 09:28:42 PM GATE: init	name:   a13	type: INPUT	#in:     0	#out:     0
+02/20/2016 09:28:42 PM GATE: init	name:    c0	type:  NAND	#in:     3	#out:     0
+02/20/2016 09:28:42 PM GATE: init	name:    c1	type:  NAND	#in:     3	#out:     0
+02/20/2016 09:28:42 PM GATE: init	name:    c2	type:  NAND	#in:     3	#out:     0
+02/20/2016 09:28:42 PM GATE: init	name:    c3	type:  NAND	#in:     3	#out:     0
+02/20/2016 09:28:42 PM GATE: init	name:    c4	type:    OR	#in:     2	#out:     0
+02/20/2016 09:28:42 PM GATE: init	name:    e0	type:  NAND	#in:     2	#out:     0
+02/20/2016 09:28:42 PM GATE: init	name:    e1	type:  NAND	#in:     2	#out:     0
+02/20/2016 09:28:42 PM GATE: init	name:    e2	type:   NOT	#in:     1	#out:     0
+02/20/2016 09:28:42 PM GATE: init	name:     f	type:  NAND	#in:     3	#out:     0
+02/20/2016 09:28:42 PM CIRCUIT: read_iscas	gate:    a0	type: INPUT	fanin: []
+02/20/2016 09:28:42 PM CIRCUIT: read_iscas	gate:    a1	type: INPUT	fanin: []
+02/20/2016 09:28:42 PM CIRCUIT: read_iscas	gate:    a2	type: INPUT	fanin: []
+02/20/2016 09:28:42 PM CIRCUIT: read_iscas	gate:    a3	type: INPUT	fanin: []
+02/20/2016 09:28:42 PM CIRCUIT: read_iscas	gate:    a4	type: INPUT	fanin: []
+02/20/2016 09:28:42 PM CIRCUIT: read_iscas	gate:    a5	type: INPUT	fanin: []
+02/20/2016 09:28:42 PM CIRCUIT: read_iscas	gate:    a6	type: INPUT	fanin: []
+02/20/2016 09:28:42 PM CIRCUIT: read_iscas	gate:    a7	type: INPUT	fanin: []
+02/20/2016 09:28:42 PM CIRCUIT: read_iscas	gate:    a8	type: INPUT	fanin: []
+02/20/2016 09:28:42 PM CIRCUIT: read_iscas	gate:    a9	type: INPUT	fanin: []
+02/20/2016 09:28:42 PM CIRCUIT: read_iscas	gate:   a10	type: INPUT	fanin: []
+02/20/2016 09:28:42 PM CIRCUIT: read_iscas	gate:   a11	type: INPUT	fanin: []
+02/20/2016 09:28:42 PM CIRCUIT: read_iscas	gate:   a12	type: INPUT	fanin: []
+02/20/2016 09:28:42 PM CIRCUIT: read_iscas	gate:   a13	type: INPUT	fanin: []
+02/20/2016 09:28:42 PM CIRCUIT: read_iscas	gate:    c0	type:  NAND	fanin: ['a0', 'a1', 'a2']
+02/20/2016 09:28:42 PM CIRCUIT: read_iscas	gate:    c1	type:  NAND	fanin: ['a3', 'a4', 'a5']
+02/20/2016 09:28:42 PM CIRCUIT: read_iscas	gate:    c2	type:  NAND	fanin: ['a6', 'a7', 'a8']
+02/20/2016 09:28:42 PM CIRCUIT: read_iscas	gate:    c3	type:  NAND	fanin: ['a9', 'a10', 'a11']
+02/20/2016 09:28:42 PM CIRCUIT: read_iscas	gate:    c4	type:    OR	fanin: ['a12', 'a13']
+02/20/2016 09:28:42 PM CIRCUIT: read_iscas	gate:    e0	type:  NAND	fanin: ['c0', 'c1']
+02/20/2016 09:28:42 PM CIRCUIT: read_iscas	gate:    e1	type:  NAND	fanin: ['c2', 'c3']
+02/20/2016 09:28:42 PM CIRCUIT: read_iscas	gate:    e2	type:   NOT	fanin: ['c4']
+02/20/2016 09:28:42 PM CIRCUIT: read_iscas	gate:     f	type:  NAND	fanin: ['e0', 'e1', 'e2']
+02/20/2016 09:28:42 PM Circuit: add_gates	name:    a0	type: INPUT
+02/20/2016 09:28:42 PM Circuit: add_gates	name:    a1	type: INPUT
+02/20/2016 09:28:42 PM Circuit: add_gates	name:    a2	type: INPUT
+02/20/2016 09:28:42 PM Circuit: add_gates	name:    a3	type: INPUT
+02/20/2016 09:28:42 PM Circuit: add_gates	name:    a4	type: INPUT
+02/20/2016 09:28:42 PM Circuit: add_gates	name:    a5	type: INPUT
+02/20/2016 09:28:42 PM Circuit: add_gates	name:    a6	type: INPUT
+02/20/2016 09:28:42 PM Circuit: add_gates	name:    a7	type: INPUT
+02/20/2016 09:28:42 PM Circuit: add_gates	name:    a8	type: INPUT
+02/20/2016 09:28:42 PM Circuit: add_gates	name:    a9	type: INPUT
+02/20/2016 09:28:42 PM Circuit: add_gates	name:   a10	type: INPUT
+02/20/2016 09:28:42 PM Circuit: add_gates	name:   a11	type: INPUT
+02/20/2016 09:28:42 PM Circuit: add_gates	name:   a12	type: INPUT
+02/20/2016 09:28:42 PM Circuit: add_gates	name:   a13	type: INPUT
+02/20/2016 09:28:42 PM Circuit: add_gates	name:    c0	type: NAND
+02/20/2016 09:28:42 PM Circuit: add_gates	name:    c1	type: NAND
+02/20/2016 09:28:42 PM Circuit: add_gates	name:    c2	type: NAND
+02/20/2016 09:28:42 PM Circuit: add_gates	name:    c3	type: NAND
+02/20/2016 09:28:42 PM Circuit: add_gates	name:    c4	type: OR
+02/20/2016 09:28:42 PM Circuit: add_gates	name:    e0	type: NAND
+02/20/2016 09:28:42 PM Circuit: add_gates	name:    e1	type: NAND
+02/20/2016 09:28:42 PM Circuit: add_gates	name:    e2	type: NOT
+02/20/2016 09:28:42 PM Circuit: add_gates	name:     f	type: NAND
+02/20/2016 09:28:42 PM Roth: operate	type:   AND	returns: Roth.X
+02/20/2016 09:28:42 PM Roth: operate	type:   AND	returns: Roth.X
+02/20/2016 09:28:42 PM Roth: operate	type:   AND	returns: Roth.X
+02/20/2016 09:28:42 PM Roth: operate	type:   AND	returns: Roth.Zero
+02/20/2016 09:28:42 PM Roth: operate	type:   AND	returns: Roth.X
+02/20/2016 09:32:41 PM CIRCUIT: read_iscas called on file: bench/c23.bench
+02/20/2016 09:32:41 PM GATE: init	name:    a0	type: INPUT	#in:     0	#out:     0
+02/20/2016 09:32:41 PM GATE: init	name:    a1	type: INPUT	#in:     0	#out:     0
+02/20/2016 09:32:41 PM GATE: init	name:    a2	type: INPUT	#in:     0	#out:     0
+02/20/2016 09:32:41 PM GATE: init	name:    a3	type: INPUT	#in:     0	#out:     0
+02/20/2016 09:32:41 PM GATE: init	name:    a4	type: INPUT	#in:     0	#out:     0
+02/20/2016 09:32:41 PM GATE: init	name:    a5	type: INPUT	#in:     0	#out:     0
+02/20/2016 09:32:41 PM GATE: init	name:    a6	type: INPUT	#in:     0	#out:     0
+02/20/2016 09:32:41 PM GATE: init	name:    a7	type: INPUT	#in:     0	#out:     0
+02/20/2016 09:32:41 PM GATE: init	name:    a8	type: INPUT	#in:     0	#out:     0
+02/20/2016 09:32:41 PM GATE: init	name:    a9	type: INPUT	#in:     0	#out:     0
+02/20/2016 09:32:41 PM GATE: init	name:   a10	type: INPUT	#in:     0	#out:     0
+02/20/2016 09:32:41 PM GATE: init	name:   a11	type: INPUT	#in:     0	#out:     0
+02/20/2016 09:32:41 PM GATE: init	name:   a12	type: INPUT	#in:     0	#out:     0
+02/20/2016 09:32:41 PM GATE: init	name:   a13	type: INPUT	#in:     0	#out:     0
+02/20/2016 09:32:41 PM GATE: init	name:    c0	type:  NAND	#in:     3	#out:     0
+02/20/2016 09:32:41 PM GATE: init	name:    c1	type:  NAND	#in:     3	#out:     0
+02/20/2016 09:32:41 PM GATE: init	name:    c2	type:  NAND	#in:     3	#out:     0
+02/20/2016 09:32:41 PM GATE: init	name:    c3	type:  NAND	#in:     3	#out:     0
+02/20/2016 09:32:41 PM GATE: init	name:    c4	type:    OR	#in:     2	#out:     0
+02/20/2016 09:32:41 PM GATE: init	name:    e0	type:  NAND	#in:     2	#out:     0
+02/20/2016 09:32:41 PM GATE: init	name:    e1	type:  NAND	#in:     2	#out:     0
+02/20/2016 09:32:41 PM GATE: init	name:    e2	type:   NOT	#in:     1	#out:     0
+02/20/2016 09:32:41 PM GATE: init	name:     f	type:  NAND	#in:     3	#out:     0
+02/20/2016 09:32:41 PM CIRCUIT: read_iscas	gate:    a0	type: INPUT	fanin: []
+02/20/2016 09:32:41 PM CIRCUIT: read_iscas	gate:    a1	type: INPUT	fanin: []
+02/20/2016 09:32:41 PM CIRCUIT: read_iscas	gate:    a2	type: INPUT	fanin: []
+02/20/2016 09:32:41 PM CIRCUIT: read_iscas	gate:    a3	type: INPUT	fanin: []
+02/20/2016 09:32:41 PM CIRCUIT: read_iscas	gate:    a4	type: INPUT	fanin: []
+02/20/2016 09:32:41 PM CIRCUIT: read_iscas	gate:    a5	type: INPUT	fanin: []
+02/20/2016 09:32:41 PM CIRCUIT: read_iscas	gate:    a6	type: INPUT	fanin: []
+02/20/2016 09:32:41 PM CIRCUIT: read_iscas	gate:    a7	type: INPUT	fanin: []
+02/20/2016 09:32:41 PM CIRCUIT: read_iscas	gate:    a8	type: INPUT	fanin: []
+02/20/2016 09:32:41 PM CIRCUIT: read_iscas	gate:    a9	type: INPUT	fanin: []
+02/20/2016 09:32:41 PM CIRCUIT: read_iscas	gate:   a10	type: INPUT	fanin: []
+02/20/2016 09:32:41 PM CIRCUIT: read_iscas	gate:   a11	type: INPUT	fanin: []
+02/20/2016 09:32:41 PM CIRCUIT: read_iscas	gate:   a12	type: INPUT	fanin: []
+02/20/2016 09:32:41 PM CIRCUIT: read_iscas	gate:   a13	type: INPUT	fanin: []
+02/20/2016 09:32:41 PM CIRCUIT: read_iscas	gate:    c0	type:  NAND	fanin: ['a0', 'a1', 'a2']
+02/20/2016 09:32:41 PM CIRCUIT: read_iscas	gate:    c1	type:  NAND	fanin: ['a3', 'a4', 'a5']
+02/20/2016 09:32:41 PM CIRCUIT: read_iscas	gate:    c2	type:  NAND	fanin: ['a6', 'a7', 'a8']
+02/20/2016 09:32:41 PM CIRCUIT: read_iscas	gate:    c3	type:  NAND	fanin: ['a9', 'a10', 'a11']
+02/20/2016 09:32:41 PM CIRCUIT: read_iscas	gate:    c4	type:    OR	fanin: ['a12', 'a13']
+02/20/2016 09:32:41 PM CIRCUIT: read_iscas	gate:    e0	type:  NAND	fanin: ['c0', 'c1']
+02/20/2016 09:32:41 PM CIRCUIT: read_iscas	gate:    e1	type:  NAND	fanin: ['c2', 'c3']
+02/20/2016 09:32:41 PM CIRCUIT: read_iscas	gate:    e2	type:   NOT	fanin: ['c4']
+02/20/2016 09:32:41 PM CIRCUIT: read_iscas	gate:     f	type:  NAND	fanin: ['e0', 'e1', 'e2']
+02/20/2016 09:32:41 PM Circuit: add_gates	name:    a0	type: INPUT
+02/20/2016 09:32:41 PM Circuit: add_gates	name:    a1	type: INPUT
+02/20/2016 09:32:41 PM Circuit: add_gates	name:    a2	type: INPUT
+02/20/2016 09:32:41 PM Circuit: add_gates	name:    a3	type: INPUT
+02/20/2016 09:32:41 PM Circuit: add_gates	name:    a4	type: INPUT
+02/20/2016 09:32:41 PM Circuit: add_gates	name:    a5	type: INPUT
+02/20/2016 09:32:41 PM Circuit: add_gates	name:    a6	type: INPUT
+02/20/2016 09:32:41 PM Circuit: add_gates	name:    a7	type: INPUT
+02/20/2016 09:32:41 PM Circuit: add_gates	name:    a8	type: INPUT
+02/20/2016 09:32:41 PM Circuit: add_gates	name:    a9	type: INPUT
+02/20/2016 09:32:41 PM Circuit: add_gates	name:   a10	type: INPUT
+02/20/2016 09:32:41 PM Circuit: add_gates	name:   a11	type: INPUT
+02/20/2016 09:32:41 PM Circuit: add_gates	name:   a12	type: INPUT
+02/20/2016 09:32:41 PM Circuit: add_gates	name:   a13	type: INPUT
+02/20/2016 09:32:41 PM Circuit: add_gates	name:    c0	type: NAND
+02/20/2016 09:32:41 PM Circuit: add_gates	name:    c1	type: NAND
+02/20/2016 09:32:41 PM Circuit: add_gates	name:    c2	type: NAND
+02/20/2016 09:32:41 PM Circuit: add_gates	name:    c3	type: NAND
+02/20/2016 09:32:41 PM Circuit: add_gates	name:    c4	type: OR
+02/20/2016 09:32:41 PM Circuit: add_gates	name:    e0	type: NAND
+02/20/2016 09:32:41 PM Circuit: add_gates	name:    e1	type: NAND
+02/20/2016 09:32:41 PM Circuit: add_gates	name:    e2	type: NOT
+02/20/2016 09:32:41 PM Circuit: add_gates	name:     f	type: NAND
+02/20/2016 09:32:41 PM Roth: operate	type:   AND	returns: Roth.X
+02/20/2016 09:32:41 PM Roth: operate	type:   AND	returns: Roth.X
+02/20/2016 09:32:41 PM Roth: operate	type:   AND	returns: Roth.X
+02/20/2016 09:32:41 PM Roth: operate	type:   AND	returns: Roth.Zero
+02/20/2016 09:32:41 PM Roth: operate	type:   AND	returns: Roth.X
+02/20/2016 11:20:39 PM CIRCUIT: read_iscas called on file: bench/c23.bench
+02/20/2016 11:20:39 PM GATE: init	name:    a0	type: INPUT	#in:     0	#out:     0
+02/20/2016 11:20:39 PM GATE: init	name:    a1	type: INPUT	#in:     0	#out:     0
+02/20/2016 11:20:39 PM GATE: init	name:    a2	type: INPUT	#in:     0	#out:     0
+02/20/2016 11:20:39 PM GATE: init	name:    a3	type: INPUT	#in:     0	#out:     0
+02/20/2016 11:20:39 PM GATE: init	name:    a4	type: INPUT	#in:     0	#out:     0
+02/20/2016 11:20:39 PM GATE: init	name:    a5	type: INPUT	#in:     0	#out:     0
+02/20/2016 11:20:39 PM GATE: init	name:    a6	type: INPUT	#in:     0	#out:     0
+02/20/2016 11:20:39 PM GATE: init	name:    a7	type: INPUT	#in:     0	#out:     0
+02/20/2016 11:20:39 PM GATE: init	name:    a8	type: INPUT	#in:     0	#out:     0
+02/20/2016 11:20:39 PM GATE: init	name:    a9	type: INPUT	#in:     0	#out:     0
+02/20/2016 11:20:39 PM GATE: init	name:   a10	type: INPUT	#in:     0	#out:     0
+02/20/2016 11:20:39 PM GATE: init	name:   a11	type: INPUT	#in:     0	#out:     0
+02/20/2016 11:20:39 PM GATE: init	name:   a12	type: INPUT	#in:     0	#out:     0
+02/20/2016 11:20:39 PM GATE: init	name:   a13	type: INPUT	#in:     0	#out:     0
+02/20/2016 11:20:39 PM GATE: init	name:    c0	type:  NAND	#in:     3	#out:     0
+02/20/2016 11:20:39 PM GATE: init	name:    c1	type:  NAND	#in:     3	#out:     0
+02/20/2016 11:20:39 PM GATE: init	name:    c2	type:  NAND	#in:     3	#out:     0
+02/20/2016 11:20:39 PM GATE: init	name:    c3	type:  NAND	#in:     3	#out:     0
+02/20/2016 11:20:39 PM GATE: init	name:    c4	type:    OR	#in:     2	#out:     0
+02/20/2016 11:20:39 PM GATE: init	name:    e0	type:  NAND	#in:     2	#out:     0
+02/20/2016 11:20:39 PM GATE: init	name:    e1	type:  NAND	#in:     2	#out:     0
+02/20/2016 11:20:39 PM GATE: init	name:    e2	type:   NOT	#in:     1	#out:     0
+02/20/2016 11:20:39 PM GATE: init	name:     f	type:  NAND	#in:     3	#out:     0
+02/20/2016 11:20:39 PM CIRCUIT: read_iscas	gate:    a0	type: INPUT	fanin: []
+02/20/2016 11:20:39 PM CIRCUIT: read_iscas	gate:    a1	type: INPUT	fanin: []
+02/20/2016 11:20:39 PM CIRCUIT: read_iscas	gate:    a2	type: INPUT	fanin: []
+02/20/2016 11:20:39 PM CIRCUIT: read_iscas	gate:    a3	type: INPUT	fanin: []
+02/20/2016 11:20:39 PM CIRCUIT: read_iscas	gate:    a4	type: INPUT	fanin: []
+02/20/2016 11:20:39 PM CIRCUIT: read_iscas	gate:    a5	type: INPUT	fanin: []
+02/20/2016 11:20:39 PM CIRCUIT: read_iscas	gate:    a6	type: INPUT	fanin: []
+02/20/2016 11:20:39 PM CIRCUIT: read_iscas	gate:    a7	type: INPUT	fanin: []
+02/20/2016 11:20:39 PM CIRCUIT: read_iscas	gate:    a8	type: INPUT	fanin: []
+02/20/2016 11:20:39 PM CIRCUIT: read_iscas	gate:    a9	type: INPUT	fanin: []
+02/20/2016 11:20:39 PM CIRCUIT: read_iscas	gate:   a10	type: INPUT	fanin: []
+02/20/2016 11:20:39 PM CIRCUIT: read_iscas	gate:   a11	type: INPUT	fanin: []
+02/20/2016 11:20:39 PM CIRCUIT: read_iscas	gate:   a12	type: INPUT	fanin: []
+02/20/2016 11:20:39 PM CIRCUIT: read_iscas	gate:   a13	type: INPUT	fanin: []
+02/20/2016 11:20:39 PM CIRCUIT: read_iscas	gate:    c0	type:  NAND	fanin: ['a0', 'a1', 'a2']
+02/20/2016 11:20:39 PM CIRCUIT: read_iscas	gate:    c1	type:  NAND	fanin: ['a3', 'a4', 'a5']
+02/20/2016 11:20:39 PM CIRCUIT: read_iscas	gate:    c2	type:  NAND	fanin: ['a6', 'a7', 'a8']
+02/20/2016 11:20:39 PM CIRCUIT: read_iscas	gate:    c3	type:  NAND	fanin: ['a9', 'a10', 'a11']
+02/20/2016 11:20:39 PM CIRCUIT: read_iscas	gate:    c4	type:    OR	fanin: ['a12', 'a13']
+02/20/2016 11:20:39 PM CIRCUIT: read_iscas	gate:    e0	type:  NAND	fanin: ['c0', 'c1']
+02/20/2016 11:20:39 PM CIRCUIT: read_iscas	gate:    e1	type:  NAND	fanin: ['c2', 'c3']
+02/20/2016 11:20:39 PM CIRCUIT: read_iscas	gate:    e2	type:   NOT	fanin: ['c4']
+02/20/2016 11:20:39 PM CIRCUIT: read_iscas	gate:     f	type:  NAND	fanin: ['e0', 'e1', 'e2']
+02/20/2016 11:20:39 PM Circuit: add_gates	name:    a0	type: INPUT
+02/20/2016 11:20:39 PM Circuit: add_gates	name:    a1	type: INPUT
+02/20/2016 11:20:39 PM Circuit: add_gates	name:    a2	type: INPUT
+02/20/2016 11:20:39 PM Circuit: add_gates	name:    a3	type: INPUT
+02/20/2016 11:20:39 PM Circuit: add_gates	name:    a4	type: INPUT
+02/20/2016 11:20:39 PM Circuit: add_gates	name:    a5	type: INPUT
+02/20/2016 11:20:39 PM Circuit: add_gates	name:    a6	type: INPUT
+02/20/2016 11:20:39 PM Circuit: add_gates	name:    a7	type: INPUT
+02/20/2016 11:20:39 PM Circuit: add_gates	name:    a8	type: INPUT
+02/20/2016 11:20:39 PM Circuit: add_gates	name:    a9	type: INPUT
+02/20/2016 11:20:39 PM Circuit: add_gates	name:   a10	type: INPUT
+02/20/2016 11:20:39 PM Circuit: add_gates	name:   a11	type: INPUT
+02/20/2016 11:20:39 PM Circuit: add_gates	name:   a12	type: INPUT
+02/20/2016 11:20:39 PM Circuit: add_gates	name:   a13	type: INPUT
+02/20/2016 11:20:39 PM Circuit: add_gates	name:    c0	type: NAND
+02/20/2016 11:20:39 PM Circuit: add_gates	name:    c1	type: NAND
+02/20/2016 11:20:39 PM Circuit: add_gates	name:    c2	type: NAND
+02/20/2016 11:20:39 PM Circuit: add_gates	name:    c3	type: NAND
+02/20/2016 11:20:39 PM Circuit: add_gates	name:    c4	type: OR
+02/20/2016 11:20:39 PM Circuit: add_gates	name:    e0	type: NAND
+02/20/2016 11:20:39 PM Circuit: add_gates	name:    e1	type: NAND
+02/20/2016 11:20:39 PM Circuit: add_gates	name:    e2	type: NOT
+02/20/2016 11:20:39 PM Circuit: add_gates	name:     f	type: NAND
+02/20/2016 11:20:39 PM Roth: operate	type:   AND	returns: Roth.X
+02/20/2016 11:20:39 PM Roth: operate	type:   AND	returns: Roth.X
+02/20/2016 11:20:39 PM Roth: operate	type:   AND	returns: Roth.X
+02/20/2016 11:20:39 PM Roth: operate	type:   AND	returns: Roth.Zero
+02/20/2016 11:20:39 PM Roth: operate	type:   AND	returns: Roth.X
