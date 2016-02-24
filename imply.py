@@ -4,9 +4,6 @@ import cframe
 import argparse
 import os
 
-J_Frontier = set()
-D_Frontier = set()
-
 def main():
     parser = argparse.ArgumentParser(description="Perform implication and checking for an ISCAS circuit.")
     parser.add_argument("circuit", help="ISCAS file describing circuit to be collapsed")
@@ -45,12 +42,11 @@ def main():
         
             # Implications call the imply_and_check routine and abort on conflict
             # Imply command, comm_tuple = (Command, gatename, value)
-            #print(command)
-            #print("Before imply\n")
+            
+            
             if command == cframe.Command.Imply:
                 loc = command_tuple[1] # location (gatename)
-                val = command_tuple[2] # value (Roth)
-                print("Calling location:",loc, "with val:", val)
+                val = command_tuple[2] # value (Roth) 
                 valid = imply_and_check(circ, faults, loc, val, D_drive)
                 if not valid:
                     print("CONFLICT. Commands aborted on command #%d\n" % count)
@@ -72,7 +68,15 @@ def main():
             if command == cframe.Command.Display:
                 circ.write_state(ofile)
 
-def find_cval(name): #Returns controlling value of the gate
+def find_cval(name):
+    """
+    Evaluates controlling value of the gate
+    Args: 
+    name (Gate.gatetype) : Type of gate
+
+    Returns:
+    Roth object that is controlling value of the gate
+    """ 
     if(name == 'AND' or name == 'NAND'):
        return cframe.Roth.Zero
     elif(name == 'OR' or name == 'NOR'):
@@ -80,7 +84,17 @@ def find_cval(name): #Returns controlling value of the gate
     else:
        return -1 #Controlling value not defined
 
-def get_val(cval, name): #Gate output if input is a controlling value
+def get_val(cval, name):
+    """
+    Evaluates gate output if input is a controlling value
+   
+    Args:
+    cval : Controlling value of the gate type
+    name (Gate.gatetype) : Type of gate
+
+    Returns:
+    Result of applying controlling value at any input of the gate
+    """ 
     if(name == 'AND' and cval == cframe.Roth.Zero):
        return cframe.Roth.Zero
     elif(name == 'NAND' and cval == cframe.Roth.Zero):
@@ -94,116 +108,130 @@ def get_val(cval, name): #Gate output if input is a controlling value
 
 
 def is_J_Frontier(circuit):
+    """
+    Adds gates on the J_Frontier to a set
+   
+    Args:
+    circuit (Circuit): Circuit containing current gate and all fanin gates.
+    
+    Returns:
+    Set of gate names on the J-Frontier
+    """ 
     countx = 0
     inputs = []
     obj = set()
     for gate in circuit.gatemap.values():
        countx = 0
-       if(gate.value != cframe.Roth.X and gate.gatetype != 'INPUT'):
-         for fin in gate.fanin:
+       if(gate.value != cframe.Roth.X and gate.gatetype != 'INPUT' and gate.value != evaluate(gate, circuit)): #Check if gate does not have a value implied by inputs, 
+         for fin in gate.fanin:                                                                                #Check if at least two inputs are unknown
            if(circuit.gatemap[fin].value == cframe.Roth.X):
              countx += 1
          if(countx >= 2): 
            obj.add(gate.name)
       
-    return obj
+    return obj  
     
-
 def is_D_Frontier(circuit):
+    """
+    Adds gates on the D_Frontier to a set
+   
+    Args:
+    circuit (Circuit): Circuit containing current gate and all fanin gates.
+    
+    Returns:
+    Set of gate names on the D-Frontier
+    """
     countx = 0
     inputs = []
     obj = set()
     for gate in circuit.gatemap.values():
        countx = 0
-       if(gate.value == cframe.Roth.X and gate.gatetype != 'INPUT'):
-         for fin in gate.fanin:
-           if(circuit.gatemap[fin].value == cframe.Roth.D or circuit.gatemap[fin].value == cframe.Roth.D_b):
+       if(gate.value == cframe.Roth.X and gate.gatetype != 'INPUT'):    #Check if output is unknown, gate is not an input line. 
+         for fin in gate.fanin: 
+           if(circuit.gatemap[fin].value == cframe.Roth.D or circuit.gatemap[fin].value == cframe.Roth.D_b): #Check if at least one input is a D/D_b
              countx += 1
          if(countx >= 1): 
            obj.add(gate.name)
       
-    return obj
+    return obj  
 
   
 def evaluate(gate_obj, circuit):
         """Evaluate current gate based on circuit state.
 
-        Note that this function both updates the value of the current gate and
-        returns the new value based on the evaluation.
-
+        
         Args:
-           ctk (Circuit): Circuit containing current gate and all fanin gates.
+           circuit (Circuit): Circuit containing current gate and all fanin gates.
+           gate_obj (Gate object): Gate object to evaluate
 
         Returns:
            Roth: Updated Roth value of current gate based on evaluation of 
               the fanin states.
+           DOES NOT UPDATE VALUE OF GATE!
 
-        Raises:
-           KeyError: If current gatetype is not in Gate.types.
         """
 
-        #if gate_obj.gatetype not in Gate.types:
-        #    raise KeyError("Invalid gate type")
-            
         statein = (circuit.gatemap[fi].value for fi in gate_obj.fanin)
 
         if gate_obj.gatetype == "AND":
-          #if(gate_obj.value == cframe.Roth.X):
+          
             val = cframe.Roth.operate("AND", statein)
         if gate_obj.gatetype == "NAND":
-          #if(gate_obj.value == cframe.Roth.X):
+          
             val = cframe.Roth.invert(cframe.Roth.operate("AND", statein))
         if gate_obj.gatetype == "OR":
-          #if(gate_obj.value == cframe.Roth.X):
+          
             val = cframe.Roth.operate("OR", statein)
         if gate_obj.gatetype == "NOR":
-          #if(gate_obj.value == cframe.Roth.X):
+          
             val = cframe.Roth.invert(cframe.Roth.operate("OR", statein))
         if gate_obj.gatetype == "XOR":
             val = cframe.Roth.operate("XOR", statein)
         if gate_obj.gatetype == "XNOR":
             val = cframe.Roth.invert(Roth.operate("XOR", statein))
-       # if self.gatetype == "BUFF":
-       #     self.value = statein[0].value
+        if gate_obj.gatetype == "BUFF":
+            val = statein[0].value
         if gate_obj.gatetype == "NOT":
-            val = cframe.Roth.invert(gate_obj.value)
-       # if self.gatetype == "DFF":   # DFF not supported at this time
-       #     self.value = Roth.X
-       # if self.gatetype == "UNDEFINED":
-       #     self.value = Roth.X
-
-        #logging.debug("GATE: eval\tname:%s\tinputs: %s\tresult: %s",
-        #              self.name.rjust(6),
-        #              str([s.name for s in statein]),
-        #              self.value)
+            val = cframe.Roth.invert(circuit.gatemap[gate_obj.fanin[0]].value)
+        
         return val     
 
 
 def check_gate_in(circuit, gate_obj):
+   """
+   Checks if all but one input of the gate is unknown. Evaluates value to be implied to that location if any.
+  
+   Args:
+   circuit (Circuit): Circuit containing current gate and all fanin gates.
+   gate_obj : Gate object
 
+   Returns:
+   loc : location of the input on the circuit 
+   val : Value to be implied
+   """
    input_list = gate_obj.fanin 
    total_inputs = len(input_list)
    count = 0
    cval_flag = False 
 
-   #print(gate_obj.name, gate_obj.gatetype, gate_obj.value)
-   #print(input_list)
-   #print(total_inputs) 
+   
+   
+   
    for fin in gate_obj.fanin:
       if(circuit.gatemap[fin].value == cframe.Roth.X):
         count += 1 
         inp = fin
-        #print(circuit.gatemap[fin].name, circuit.gatemap[fin].value)
+        
       if(circuit.gatemap[fin].value == find_cval(gate_obj.gatetype) or circuit.gatemap[fin].value == cframe.Roth.D or circuit.gatemap[fin].value == cframe.Roth.D_b):
         cval_flag = True
       
    
-   #print(cval_flag, count)
+   
    if(not cval_flag):
      if(count == 1):
        val = find_cval(gate_obj.gatetype)
        loc = inp
-       #print(loc, val)
+       
        return(val, loc)
      else:
        val = cframe.Roth.X
@@ -212,11 +240,11 @@ def check_gate_in(circuit, gate_obj):
    else:
      val = cframe.Roth.X
      loc = "NONE"
-     #print(loc, val)
+     
      return(val, loc)  
 
-   #print(val.value, loc)
-   #return (val, loc)
+   
+   
 
 
 def imply_and_check(circuit, faults, location, value, D_drive):
@@ -236,7 +264,10 @@ def imply_and_check(circuit, faults, location, value, D_drive):
     inp_list = []
     inputs = []
     global J_Frontier
-
+    """
+    Routine that implies values to a line/fault by checking previous value on the line/fault.
+    Returns False if there is a conflict
+    """
     for gate in circuit.gatemap.values():
        if(location == gate.name):
           name = gate.gatetype
@@ -247,10 +278,9 @@ def imply_and_check(circuit, faults, location, value, D_drive):
                  gate.value = value
                elif gate.value != value:
                  return False
-               #print(gate.name, gate.gatetype, gate.value.va 
+               
              else:
-                
-                  #print("Inside imply fault")
+                   
                   if(location == fault.stem):
                     if(value != fault.value):
                       if(fault.value == cframe.Roth.One and value == cframe.Roth.Zero):
@@ -265,13 +295,16 @@ def imply_and_check(circuit, faults, location, value, D_drive):
                
 
     rothv = value 
-
+    """
+    Check if current gate is an INPUT line/OUTPUT line/Internmediate net 
+    Does forward implication, backward implication or both depending on location in circuit
+    Calls imply_and_check() recurcsively on locations with imply values
+    """
     if(location in circuit.inputs): 
        for gate in circuit.gatemap.values():
          if location in gate.fanin:
             if(gate.value == cframe.Roth.X):
-              loc = gate.name
-              #val = get_val(rothv, gate.gatetype)
+              loc = gate.name 
               val = evaluate(gate, circuit)
             else:
               loc = gate.name
@@ -281,7 +314,7 @@ def imply_and_check(circuit, faults, location, value, D_drive):
               imply_and_check(circuit, faults, loc, val, D_drive)
             
                               
-               
+              
     elif(location in circuit.outputs): 
         for fault in faults:
          if(location != fault.stem):
@@ -296,47 +329,35 @@ def imply_and_check(circuit, faults, location, value, D_drive):
                 loc = fin
                 val = cframe.Roth.invert(temp)
                 imply_and_check(circuit, faults, loc, val, D_drive)
-           elif(gate_obj.gatetype == 'NOT'):
-              for fin in gate_obj.fanin:
-                 loc = fin
-                 val = cframe.Roth.invert(gate_obj.value)
-                 imply_and_check(circuit, faults, loc, val, D_drive)
 
                
           
-  
     else:
        for gate in circuit.gatemap.values():
-          if location in gate.fanin:
-            #loc = gate.name
-            #val = evaluate(gate, circuit)
-            temp1 = find_cval(gate_obj.gatetype) 
+          if location in gate.fanin: 
+            temp1 = find_cval(gate.gatetype) 
             if(gate.gatetype == 'NAND' or gate.gatetype == 'NOR'):
              if(gate.value == temp1 and gate.value != cframe.Roth.X):
-               #print("NAND/NOR output controlling\n")
+               
                for fin in gate.fanin:  
                  loc = fin
                  val = cframe.Roth.invert(temp1)
-                 #print(loc, val)
-                 #if(circuit.gatemap[fin].value == cframe.Roth.X):
                  imply_and_check(circuit, faults, loc, val, D_drive)
              elif(gate.value == cframe.Roth.invert(temp1) and gate.value != cframe.Roth.X):
-               #print("NAND/NOR output non-controlling\n")
-               #print(gate.name, gate.gatetype, gate.value, circuit.gatemap['c3'].value)
+               
                (val, loc) = check_gate_in(circuit, gate)
-               #print(val, loc)
                if(val == find_cval(gate_obj.gatetype) and loc != "NONE"):
                  imply_and_check(circuit, faults, loc, val, D_drive)
              else:
                loc = gate.name
                val = evaluate(gate, circuit)
+               imply_and_check(circuit,faults,loc,val,D_drive)
 
             elif(gate.gatetype == 'AND' or gate.gatetype == 'OR'):
              if(gate.value == cframe.Roth.invert(temp1)): 
                for fin in gate.fanin:  
                 loc = fin
                 val = cframe.Roth.invert(temp1)
-                #if(circuit.gatemap[fin].value == cframe.Roth.X):
                 imply_and_check(circuit, faults, loc, val, D_drive)
              elif(gate.value == cframe.Roth.invert(temp1) and gate.value != cframe.Roth.X):
                (val, loc) = check_gate_in(circuit, gate_obj)
@@ -348,36 +369,24 @@ def imply_and_check(circuit, faults, location, value, D_drive):
                imply_and_check(circuit, faults, loc, val, D_drive)
 
             elif(gate.gatetype == 'NOT'):
-              if(gate.value != cframe.Roth.X):
-                for fin in gate_obj.fanin:
-                   loc = fin
-                   val = cframe.Roth.invert(gate_obj.value)
-                   imply_and_check(circuit, faults, loc, val, D_drive)
-              else:
+                
                 loc = gate.name
-                val = evaluate(gate, circuit)
+                val = evaluate(gate, circuit) 
                 imply_and_check(circuit, faults, loc, val, D_drive)
  
-             
-
-
-            #imply_and_check(circuit, faults, loc, val, D_drive, J_Frontier)
-
-       #for gate in gate_obj.fanin:
-          #inputs.append(circuit.gatemap[gate].value)
-
+       
        for fault in faults:
          if(location != fault.stem):
            temp = find_cval(gate_obj.gatetype)
-           #print("Parent gate:", gate_obj.name, "Value:",gate_obj.value, "C value:", temp)
+           
            if(gate_obj.gatetype == 'NAND' or gate_obj.gatetype == 'NOR'):
              if(gate_obj.value == temp):
-               #print("NAND/NOR output controlling\n")
+               
                for fin in gate_obj.fanin:  
                  loc = fin
                  val = cframe.Roth.invert(temp)
-                 #circuit.gatemap[fin].value = val 
-                 #print(loc, val)
+                 
+                 
                  if(fin in circuit.inputs):
                    circuit.gatemap[fin].value = val
                  else:
@@ -398,22 +407,9 @@ def imply_and_check(circuit, faults, location, value, D_drive):
                if(val == find_cval(gate_obj.gatetype) and loc != "NONE"):
                  imply_and_check(circuit, faults, loc, val, D_drive)
 
-                  
-
-      # check_gate_out = gate_out(gate_obj.gatetype, inputs)
-      # cval = find_cval(gate_obj.gatetype)
-      # if(value == cval and value != (cframe.Roth.D or cframe.Roth.D_b or cframe.Roth.X)):
-      #    val = cframe.Roth.invert(cval)
-      #    for item in gate_obj.fanin:
-      #       imply_and_check(circuit, faults, item, val, D_drive, J_Frontier)
-      # if(value == cval and  check_gate_out != (cframe.Roth.D or cframe.Roth.D_b or cframe.Roth.X)):
-      #   if check_gate_out != value:
-      #        return False
     
-    
-
     # True indicates valid implication; False indicates a conflict
-    #print(location)
+    
     return True
 
 
@@ -459,9 +455,28 @@ def x_path_check(circuit, outfile):
        circuit (Circuit): The circuit under consideration.
        outfile (file pointer): Open file pointer for writing.
     """
-
-    #print("TODO: Complete this function to identify and report the D frontier gates with X-paths.")
-
+    
+    D = is_D_Frontier(circuit)
+    outfile.write("X-PATH\n") 
+    if(D):
+      for item in D:
+         if(item in circuit.outputs):
+           outfile.write(item + "\n")
+         else:
+           gate = circuit.gatemap[item]
+           flag = True
+           while not gate.name in circuit.outputs:  #Propagate till the gate is an OUTPUT line
+              for i in circuit.gatemap.values():
+                 if(gate.name in i.fanin):
+                    gate = i
+                 if gate.value != cframe.Roth.X:
+                    flag = False               
+                 else:
+                    flag = True
+           if(flag):                                #If the OUTPUT line is unknown, the gate is on X-PATH 
+             outfile.write(item + "\n")
+    outfile.write("$\n\n")
+     
 
 if __name__ == '__main__':
 
